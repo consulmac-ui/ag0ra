@@ -1,0 +1,112 @@
+---
+import Base from '../layouts/Base.astro';
+// [date, texte, citation?]
+const years = [
+  ['Avant', [
+    ['2002', "Premières soirées Lune Noire dans un loft du Vieux-Montréal : chaque mois, autour de la nouvelle lune, des amis artistes et musiciens se rencontrent pour jammer et danser."],
+    ['15 septembre 2007', "Un Earthdance « Give peace a dance » à Saint-Fortunat, bien avant l'arrivée du Donjon ; un autre suit le 13 septembre 2008. Les affiches en sont conservées."],
+    ['2009', "Le Donjon du 5505, à Montréal : club privé, tentures rouges, hamacs, platines et Lune Noire. Le 18 septembre 2009, LutinDesBois, de Paris, y joue pour la première fois au Québec."],
+    ['Janvier–avril 2010', "Le calendrier de programmation du Donjon aligne soirées, ateliers de peinture, Lune Noire et lancements : le CD Earth de DJ Zen le 12 mars, une Full Moon Party le 26 février, la soirée intime avec le fondateur de Suns of Arqa en avril. Le 17 avril, « Dark Side of Peace » à « l'ancien Donjon », de 22 h à 8 h."],
+  ]],
+  ['2010', [
+    ['30 mai', "Le camion de déménagement devant la maison au toit rouge du 81, route 263, à Saint-Fortunat. Le Donjon devient « grandeur nature »."],
+    ['12–15 juin', "Premières photos du bunker, l'ancienne porcherie de 180 pieds : le plancher est enseveli sous des tonnes de béton cassé. Le déblayage commence, au marteau-piqueur et à la brouette."],
+    ['27 juin', "Premier petit pont sur le ruisseau, premiers sentiers, la grange dans le champ fleuri."],
+    ['4–5 juillet', "Un hamac au-dessus de l'étang, une boîte électrique sur un arbre, une structure de truss dans le champ ; la nuit, les premières lignes de lumière entre les arbres. Le clip « L'île avant la création » date de ces jours-là."],
+    ['4 août', "Le plancher du bunker est nu ; les débris forment un long mur de pierres dans le champ."],
+    ['14–15 août', "Un souper dans le bunker, puis la première scène au bord de l'étang, avec des tentes sous les épinettes, un bouddha dans l'herbe, des guirlandes dans les arbres."],
+    ['11 septembre', "Les premières loges neuves, aux murs rouges et orangés, se dressent dans le bunker sous les néons. Le bureau s'installe dans un coin."],
+    ['18 septembre', "Earthdance 2010 au Donjon, « 81 route 263, St-Fortunat » : la danse mondiale pour la paix. La prière pour la paix est filmée ce jour-là."],
+    ['12 novembre', "Mise en ligne du site ledonjon.ca : « Enfin voilà un premier jet après plusieurs mois d'inactivité et un déménagement en région de l'établissement… du neuf et du amélioré, ça fait du bien ! »"],
+    ['28 décembre', "Dernière mise à jour du site : le Donjon compte « à ce jour plus de 400 membres »."],
+    ['31 décembre', "Party du Jour de l'An 2011 dans le Donjon, « en haut de la montagne » : 125 personnes au chaud, onze DJ, un grand feu de joie, un autobus depuis Montréal. « Toutes les loges ont été réservées !!! »"],
+  ]],
+  ['2011', [
+    ['24 janvier', "Le thermomètre de la porcherie indique moins vingt-cinq."],
+    ['5 février', "« Main d'œuvre ! Dans l'bois ! », le chantier d'hiver, « dans l'bois, su'l bord de l'eau ». Un tunnel de neige éclairé en rouge, les loges chauffées au poêle."],
+    ['19–23 mai', "Les loges et la cuisine du bunker sont finies ; dehors, un dôme géodésique, des rondins, le ruisseau en crue."],
+    ['3–5 juin', "Festival Sundari 2011, « une célébration de l'amour universel », avec le Dreamtree Project d'Adham Shaikh et Uwe Neumann. Colonnes de son dans la porte du bunker, cabine de DJ dans les arbres, panneau « Zone à feu »."],
+    ['Juin–juillet', "Passerelles de rondins, plateforme de bois rond entre les arbres, scène couverte sous les épinettes, bureau à deux portables avec vue sur la forêt. Le panneau « Camping : site enchanteur, lac, rivière, sentiers, électricité, eau courante » est planté devant la maison."],
+    ['19–21 août', "Tatanka, « 3-days outdoor gathering », au Donjon grandeur nature."],
+    ['24 août', "Le Donjon devient L'AgorA. Christian écrit aux membres : « Le ver qui se transforme en papillon en arrive à devoir décoller pour sa continuité ! » Une cellule de vingt personnes à 50 $ par mois, deux niveaux de groupe, les comptes affichés, le chemin déneigé, et le propriétaire de la terre qui trouve « l'idée bien bonne »."],
+    ['23–25 septembre', "Earthdance St-Fortunat 2011, à « L'Agora, Centre d'Art-Multi de St-Fortunat ». Le photographe Renaud Kasma fixe l'image de la cabane du Cherry Island et de son hamac."],
+    ['10 novembre', "La yourte dans les feuilles mortes, les loges aménagées en chambres, le bois cordé pour l'hiver."],
+    ['15 décembre', "En fusionnant deux identités Facebook, la page perd toutes ses informations. « So now, in a crush, I'll be updating tonight. » Les albums « What is l'AgorA (Archives 2011) », 36 photos, et « L'AgorA, from ground up », 156 photos, sont mis en ligne dans les jours qui suivent."],
+    ['26 et 28 décembre', "Deux cérémonies amérindiennes de nuit, menées par un roadman, « accompagnées de chants et de prières toute la nuit, jusqu'au lever du soleil »."],
+  ]],
+  ['2012', [
+    ['Mars', "« Les bookings commencent pour l'été 2012 ! » Le Reggae Bash, 3-4-5 août, est confirmé."],
+    ['Avril', "« Ça y est ! Le camping de l'Agora est fin prêt pour vous accueillir, avec même des possibilités de camper clés en main ! » L'AgorA se dit « à la fois cobayes et scientifiques » en lisant la mesure des laboratoires ruraux du ministère des Affaires municipales."],
+    ['1er juin', "Festival participatif de l'Agora."],
+    ['24–27 juin', "« The new mandala teepee, 25 feet up and 2 floors! » et « the new treehouse with wifi, electricity and a view ». La cuisine d'été s'allume en bleu devant le Cherry Island."],
+    ['6–8 juillet', "Camper's Halloween du Campeur : « on se déguise en bête sauvage, en fée carabosse, en fantôme plein de dents… un endroit où déconnecter du stress et vivre des moments paisibles quasi féeriques ». À la mi-juillet, la tarification du camping est publiée : 10 $ la nuit, 15 $ dans la yourte ou les treehouses."],
+    ['3–5 août', "Reggae Bash, septième édition, à L'AgorA. « This is Christian at l'Agora and some serious helpers are needed to get this wonderful weekend happening! »"],
+    ['Août', "Le plan : « un stage, une forêt… la piste de danse dégagée d'arbres entre les arbres, un amphithéâtre naturel, trois treehouses autour du dancefloor reliées par des passerelles, et ce, en permanence ». L'AgorA de St-Fortunat devient un lieu officiel Earthdance 2012."],
+    ['21–23 septembre', "Fall Equinoxe – Earthdance St-Fortunat 2012, troisième édition à L'AgorA : DJ, bands live, reggae et jams, « dans notre bol circulaire de 55 pieds avec une scène au milieu ». La prière pour la paix, le 22 septembre, en cercle dans la nuit."],
+    ['Octobre', "Indian Summer Spirit, deux semaines après Earthdance. Puis : « L'Agora cherche à mieux se définir avec les autorités pour une accréditation d'initiative pertinente pour le mieux-être de notre société déconnectée. » Recherche de colocataires et de quelqu'un « qui s'y connaît au démarrage d'OBNL »."],
+    ['Novembre', "Aurores boréales à l'Agora. Le nouveau site ag0ra.org est « en route »."],
+    ['20–21 décembre', "Célébration du solstice d'hiver : « Nouveau départ ! dans la paix et la spontanéité ! »"],
+  ]],
+  ['2013', [
+    ['Janvier', "Campagne de sociofinancement sur Ulule : « Pour chaque don nous vous offrons plusieurs types de séjours en échange ! » Objectif 1 000 $ en 30 jours. Le rapport de la Régie intermunicipale d'incendie des 3 Monts sert de liste de travaux : poêle, cheminée, détecteurs, extincteurs."],
+    ['21 février', "« Il reste 6 jours !!! Merci de vos appuis ! »"],
+    ['Mars', "« Première cuvée qu'on n'a pas passée au travers !! Vive le sirop d'érable de l'Agora !! » Tatanka 2013 est confirmé pour le 28 juin. Un « bon meeting communicatif pour ce qui s'en vient : cet été 2013, on chômera pas ! »"],
+    ['Avril', "« L'Agora évolue chaque jour à partir de ses racines comme lieu de fête vers une maison durable, sûre et progressive pour tous… Nous sommes présentement 6 individus engagés. » Recherche de colocs pour l'été : « nous sommes 4 personnes déjà sur place, mais avec l'ampleur du projet et des connaissances requises, et des coûts, quelques personnes de plus serait l'idéal »."],
+    ['Début mai', "Le nouveau tipi. Puis l'appel : « we need more people involved in the ecological societary project of l'AgorA because if the situation remains that people do not encourage more the existence of this place, as for October 2013 l'Agora will close its doors. PLEASE spread the infos so that we get a chance after 36 months and over 4000 hours of work!!! »"],
+    ['Fin mai', "Les treehouses l'Ascension et la Riveraine sont « disponibles pour location avec vue imprenable sur le tipi, le ruisseau et le Cherry Island ». « Bien au sec dans la Riveraine, sous cette pluie torrentielle !!!! » Le 31 mai : « demain, le toit !! » ; le 1er juin : « toit presque terminé (on manque de planches), mezzanine installée, électricité arrivée, ce soir on y dort !!! »"],
+    ['Juin', "« Aujourd'hui, 3 ans de travaux. 3 ans d'efforts et de poussées créatrices pour concevoir un endroit propice aux lutins de ce monde. » Les relations avec la municipalité se tendent : plus de gros festivals « jusqu'à ce que notre crédibilité soit restaurée par le conseil municipal ». Blitz de relations publiques le 23 juin au restaurant du village, pamphlets à toutes les portes, séance d'information à la cabane à patates. Le 19 juin : « Attention : traverse de lutins ! » Une brochure présente le projet agrotouristique : champignons gourmets, permaculture, hébergement."],
+    ['28 juin – 1er juillet', "Tatanka 2013, trois jours de festival électronique en plein air, sur la nouvelle orientation des scènes."],
+    ['26 juillet', "Campement autogéré 2013 à L'AgorA, « à moins de 100 km et 3 jours avant » le festival Open Mind."],
+    ['Août', "« C'est parti pour les champignons ! » Seringues de spores et mycéliums de reishi rouge, shiitake et turkey tail. Le nouveau plan de l'Agora, dessiné par Antoine. « L'Agora étant un endroit de geeks en herbes et technologies… » Le chantier du « next level dancefloor » : on purifie à la sauge la future piste de danse."],
+    ['2–11 septembre', "Le nouveau site ag0ra.org est en ligne. « Neverland stage almost done », puis, le 10 : « Le Neverland terminé !!! » La fanpage passe le cap des 1 000 mentions J'aime."],
+    ['20–22 septembre', "Earthdance St-Fortunat 2013, quatrième édition, thème « la communauté », sur le Neverland : « notre nouvelle scène en bois rond avec decks aux arbres pour les danseurs ». L'AgorA est reconnue par Earthdance Global comme organisme bâtisseur de paix. « À l'Agora nous ne sommes que 4 et nous travaillons sans relâche. »"],
+    ['Fin septembre', "« L'Agora a réussi un tour de force pour Tatanka et Earthdance St-Fortunat : AUCUNES PLAINTES !!! c'est vraiment un record ! » Un conseiller du village encourage le collectif ; « next stop après les élections… le dézonage appuyé par la municipalité ! » Un blogue titre « Coming Home to You » : « L'Agora qui inspire les gens ! »"],
+    ['Octobre–novembre', "Recherche d'un pro « pour une location-achat de maison et ferme : on a 6 mois pour trouver une façon d'acheter ». La fournaise au bois enfume la maison. « Une petite partie du bunker chauffé ! »"],
+    ['21 décembre', "Back to Earth, le solstice d'hiver à L'AgorA."],
+  ]],
+  ['2014', [
+    ['Janvier', "Vœux de « toute l'équipe de l'AgorA ». L'AgorA cherche des promoteurs « pour la belle saison qui s'en vient : une exposition, un festival, un camping de groupe ou bien encore un weekend de grandeur nature ». Le service informatique Consulmac est offert sur place."],
+    ['Mars', "« On cherche du financement et une équipe motivée ! » La terre de 104 acres, ses bâtiments, ses plantations et ses 2 500 érables : « Essayez de trouver mieux pour 250 mille $ !! » Colocataires « irréductibles Gaulois » recherchés pour six mois. Le Manifeste des Oasis en tous lieux de Pierre Rabhi est partagé."],
+    ['Avril', "« D'autres bonnes nouvelles de l'Agora… août et septembre sont bookés, donc les loyers et dépenses payés. Il y aura un festival en août et… le retour de Earthdance le 18 septembre 2014, 5e édition, the very last one. Il ne nous manque que le mois de juillet. » La maison est offerte en location pour l'été."],
+    ['Mai', "Le Neverland au coucher du soleil, « Cherry Island waterworld », un bureau avec Wi-Fi et électricité dans la forêt. Offre de vivre sur le projet gratuitement jusqu'au 1er octobre, « en échange de garder la place propre et de respecter les voisins »."],
+    ['6–8 juin', "Festival Tatanka 2014, troisième édition, trois jours en plein air : FreeWorm live, danse « sur une des rampes du stage le Neverland ». Bilan : « Mission accomplie !! et surtout… aucunes plaintes des voisins !!! Ce fut le plus fou et le plus énergisant des festivals qui ait pu se produire sur les planches de l'Agora. »"],
+    ['9 juin', "« Aujourd'hui, l'Agora célèbre ses 4 ans d'existence ! Que d'évolution, enseignements et de travaux pendant ces années folles ! » Open House du changement, marché aux puces et camping : « cet événement sera celui qui déterminera si l'Agora devra et pourra continuer sa mission ». Sinon, « juste louer tout compris pour 3 600 $, soit les 3 mois qui restent au bail (octobre 2014) »."],
+    ['13 juin', "« L'Agora is at its last season and we would like to share with you the experience!! »"],
+    ['23–24 juin', "Party de la Saint-Jean sur le Cherry Island, « la tribu de la St-Jean », 10 $ par personne par nuit « pour nous aider à garder l'endroit vivant »."],
+    ['Juillet', "« Venez passer une semaine, 2 semaines ou 1 ou 2 mois à l'AgorA pour enfin pouvoir connaître ce qu'est de vivre sur un projet et de partager les quotidiens avec d'autres qui ont envie de changement ! » Treehouses en camping tout l'été."],
+    ['Août', "Préparation d'Earthdance : billets en prévente, vendeurs à Trois-Rivières, Sherbrooke, Chicoutimi, Rimouski, Victoriaville, Ottawa, Toronto ; « une belle ride » de bands du Québec et de DJ de l'Ontario ; recherche de marionnettes géantes. La page passe 1 500 mentions J'aime. Fin août, un problème de tension sur la ligne du Cherry Island : « billets gratis pour petits services d'électricien svp !! »"],
+    ['19–21 septembre', "Festival EarthDance, 5e édition, « Transformation », le dernier festival à L'AgorA. « The very last call de l'AgorA !! Ensuite on renvoie la magie dans les étoiles !! » Journée internationale de la paix le 21 : « on vous invite à venir manifester, à votre façon, ce qu'est pour vous la paix dans le monde »."],
+    ['26 septembre', "« Tout doit sortir et sera à donner ! » : « c'est aujourd'hui que le grand vidage de l'agora s'amorce ! Tout doit être donné ou mis à la poubelle ! on a un super container pour tout vider le bunker ! » Cinq ans de meubles, d'outils, de stock d'horticulture, de déco, de vaisselle."],
+    ['Octobre', "Fin du bail. Dernières photos de la terre, le 16 octobre 2014."],
+  ]],
+  ['Après', [
+    ['9 mars 2015', "« Si jamais ça vous dit, la terre de l'Agora avec 104 acres, avec maison et tous les bâtiments, est toujours à vendre pour 240 000 $. On a un super dossier de monté pour le dézonage de la place. »"],
+    ['10 juin 2015', "« L'Agora (le projet) est maintenant à la recherche d'une terre d'accueil avec cours d'eau pour s'établir. » Le 27 octobre : « Toujours à la recherche d'un terrain de 10 acres en montant !! »"],
+    ['Entre 2015 et 2018', "La page change sa photo de couverture pour celle de Renaud Kasma, décédé : « bon voyage céleste et merci encore pour cette photo qui a mis le ton et la vibe pour l'Agora »."],
+    ['2018', "Christian offre ses services aux festivals de l'été (Éclipse, Timeless…) et, le 6 août, ajoute « beaucoup de photos de ce que cet endroit avait l'air avant, pendant et après… parce qu'il manquait de photos des expériences passées sur cet endroit magique »."],
+    ['10 mars 2019', "« Oyé oyé oyé. Si vous voyez un 20-30 acres avec beaucoup d'épinettes à vendre, faites-moi-le savoir svp ! C'est possible que le projet de l'Agora redémarre ! »"],
+    ['26 novembre 2019', "« Avant l'Agora, il y avait Guindonville, qui aura été un autre combat pour du logement d'artistes à loyers abordables. » Le film monté à partir des vieilles cassettes DV retrouvées après seize ans est partagé sur la page."],
+    ['25 septembre 2020', "La nouvelle de l'acheteur de la terre : tous les arbres « qui nous servaient de labyrinthes, camping, cabanes, méditations diverses, dancing, faire l'amour, redécouvrir l'enfant intérieur, contemplations » ont été coupés, puis jugés impropres à faire de la planche, renvoyés ou brûlés. « Le gars a tout coupé le beau paradis que c'était pour se faire dire que le bois est scrap. » La maison est devenue un poulailler."],
+    ['7 août 2021', "« En ces temps incertains… j'ai pensé à offrir un retour en arrière à un moment de création et d'ambiances naïves et pleines d'amour. J'ose espérer apporter un sourire d'espoir, une lueur dans vos cœurs avec ce flash-back où tout était sorti de l'imagination et intégré à la forêt pour des événements hors système. »"],
+    ['2022', "« La fois où la scène du Neverland de L'Ag0rA s'est mise à vibrer pleine grandeur. » En novembre, le profil de l'Agora sur rave.ca, « souvenirs avec photos »."],
+    ['2023', "Le 27 juin, le plan de 2013 dessiné par Antoine est republié : « le nouveau plan de l'Agora ! » Le 10 octobre : « bin oui les projets redémarrent !!! » Un sauna de 8 × 8 × 8, « aussi un endroit de méditation, contemplation, de repos et de déconnexion », au bord d'une rivière."],
+    ['2025', "Christian cherche du travail en festivals, « une première en 20 ans », et souhaite la bonne année « aux rebelles et à ceux qui cherchent la vérité à tout prix. Retournons à nos racines avant d'être déracinés pour de bon ! »"],
+    ['2026', "Ce site-archive est assemblé à partir de ce qui reste."],
+  ]],
+];
+---
+<Base title="Chronologie" current="/chronologie/">
+  <p class="eyebrow">Chronologie</p>
+  <h1>Saison par saison</h1>
+  <p class="lede">Les dates viennent des photos (leurs métadonnées), des sites ledonjon.ca et ag0ra.org, des événements Facebook et des publications de la page de L'AgorA, dont les citations sont reprises telles quelles.</p>
+  <ul class="timeline">
+    {years.map(([year, items]) => (
+      <>
+        <li class="year"><h2>{year}</h2></li>
+        {items.map(([d, text, q]) => (
+          <li><time>{d}</time><p>{text}</p>{q && <p class="q">{q}</p>}</li>
+        ))}
+      </>
+    ))}
+  </ul>
+</Base>

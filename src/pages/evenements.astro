@@ -1,0 +1,126 @@
+---
+import Base from '../layouts/Base.astro';
+const events = [
+  ['17 avr. 2010', "Dark Side of Peace", "à « l'ancien Donjon », Montréal, de 22 h à 8 h."],
+  ['18 sept. 2010', "Earthdance 2010", "« Give peace a dance », 81 route 263, St-Fortunat. Le premier Earthdance du Donjon grandeur nature."],
+  ['31 déc. 2010 – 2 janv. 2011', "Party du Jour de l'An 2011 ~ Red Electric Earth", "125 personnes dans le Donjon en haut de la montagne, 11 DJ, feu de joie, autobus depuis Montréal."],
+  ['5 févr. 2011', "Main d'œuvre ! Dans l'bois !", "le chantier d'hiver, « dans l'bois, su'l bord de l'eau »."],
+  ['3–5 juin 2011', "Festival Sundari 2011 – Dreamtree Project", "« Une célébration de l'amour universel » avec Adham Shaikh et Uwe Neumann. 1er outdoor de l'été. Le festival Sundari de 2011 est aussi cité, avec Tatanka et Earthdance, parmi les « événements passés à l'AgorA »."],
+  ['19–21 août 2011', "Tatanka 2011", "« 3-days outdoor gathering », Le Donjon grandeur nature."],
+  ['23–25 sept. 2011', "Earthdance St-Fortunat 2011", "à « L'Agora, Centre d'Art-Multi de St-Fortunat ». Première édition sous le nom de L'AgorA."],
+  ['26 et 28 déc. 2011', "Cérémonies amérindiennes", "deux cérémonies de nuit menées par un roadman, jusqu'au lever du soleil."],
+  ['1er juin 2012', "Festival participatif de l'Agora", ""],
+  ['6–8 juil. 2012', "Camper's Halloween du Campeur", "« on se déguise en bête sauvage, en fée carabosse, en fantôme plein de dents »."],
+  ['3–5 août 2012', "Reggae Bash, 7e édition", "trois jours de reggae roots à L'AgorA."],
+  ['21–23 sept. 2012', "Fall Equinoxe – Earthdance St-Fortunat 2012", "3e édition à L'AgorA. DJ, bands live, reggae, jams. Prière pour la paix le 22."],
+  ['Oct. 2012', "Indian Summer Spirit", "deux semaines après Earthdance, sur la même scène."],
+  ['Nov. 2012', "Full Moon Gathering", "une pleine lune à L'AgorA."],
+  ['20–21 déc. 2012', "Winter Solstice Celebration", "« Nouveau départ ! dans la paix et la spontanéité ! »"],
+  ['28 juin – 1er juil. 2013', "Tatanka 2013", "« 3 days outdoor electronic festival ». 392 personnes intéressées sur Facebook."],
+  ['26 juil. 2013', "Campement autogéré 2013", "« Beau trajet de conscience et partages », trois jours avant Open Mind."],
+  ['20–22 sept. 2013', "Earthdance St-Fortunat 2013", "4e édition, thème « la communauté », sur le Neverland. Retour de FreeWorm live. Billets chez Psychonaut à Montréal et Chanvre du Nord à Saint-Jérôme."],
+  ['21 déc. 2013', "Back to Earth", "le solstice d'hiver."],
+  ['6–8 juin 2014', "Festival Tatanka 2014, 3e édition", "« 3 days outdoor electronic festival ». FreeWorm live. « Le plus fou et le plus énergisant des festivals qui ait pu se produire sur les planches de l'Agora. »"],
+  ['9 juin 2014', "Open House du changement", "marché aux puces et camping, pour les quatre ans de L'AgorA."],
+  ['23 juin 2014', "Party de la Saint-Jean", "sur le Cherry Island."],
+  ['19–21 sept. 2014', "Festival EarthDance, 5e édition – Transformation", "le dernier festival à L'AgorA. Snowphish & LockOut, Robert Fusil et les Chiens Fous, Sweet Grass, Ol' Savannah et d'autres, sur le Neverland."],
+  ['26 sept. 2014', "Tout doit sortir et sera à donner !", "le grand vidage du bunker."],
+];
+const affiches = [
+  ['177-39835-10150232949315114-669360113-137012.jpg', "Earthdance, 15 septembre 2007, Saint-Fortunat : « give peace a dance ». Avant le Donjon.", 'doc'],
+  ['173-37818-10150232949715114-669360113-137012.jpg', "Earthdance, 13 septembre 2008, Saint-Fortunat.", 'doc'],
+  ['181-40316-10150251442735114-669360113-142523.jpg', "Earthdance, 18 septembre 2010 : « give peace a dance, 81 route 263, St-Fortunat ».", 'doc'],
+  ['240-droppedimage-1.jpg', "Festival Sundari, 3-4-5 juin 2011, « présente Dreamtree Project, Adham Shaikh & Uwe Neumann, live ! »", 'doc'],
+  ['546-img-0180.jpg', "Sundari, version anglaise : « An ambient music festival ». Line-up et prix : 45 $ avant mars, 60 $ à la porte.", 'doc'],
+  ['239-droppedimage.jpg', "Tatanka, 19-20-21 août 2011, avec sa tête de bison.", 'doc'],
+  ['117-earthdance2011stfo.jpg', "Earthdance St-Fortunat, 23-25 septembre 2011, sur une photo de la scène.", 'doc'],
+  ['025-reggae-bash-poster-2.jpg', "Reggae Bash, 7e édition, 3-4-5 août 2012, à L'AgorA.", 'doc'],
+  ['612-tatanka2013.jpg', "Tatanka, 28 juin au 1er juillet 2013, « foire de musique électronique ».", 'doc'],
+  ['334-earthdance-fbpage.jpg', "Earthdance 2013, « Fall Equinox, 20-22-09-2013, global peace party », à l'Agora.", 'doc'],
+  ['338-capture-decran-2013-08-20-a-21-50-49.jpg', "Bands et DJ d'Earthdance 2013 : Mille Rosado, Dugong, Dalaii Baba, BradyCardie, FreeWorm, Neo Tetsuo Tek, DJ Rikam, Spo_Onani, Snowphish, VNFX, Sabi Non Stop, Alex Dubmex, Pranapapa, Ultra-K, DJ Clectic, Pounjah Familia. 40 $, 81 route 263.", 'doc'],
+  ['015-agora-brochure.jpg', "La brochure de 2013, recto : « L'Agora, une forêt enchantée… où le temps cesse d'exister. Tout nouveau projet d'entreprise agrotouristique. »", 'doc'],
+  ['016-agora-brochure2.jpg', "La brochure de 2013, verso : l'agrotourisme, les champignons, la permaculture, la communauté.", 'doc'],
+];
+const photos = [
+  ['000-img-1005.jpg', "Earthdance 2010 : le camp, une tente, un hamac au-dessus de l'eau."],
+  ['001-img-1288.jpg', "Earthdance 2010 : la foule assise sous les épinettes, le 19 septembre."],
+  ['113-img-1691.jpg', "Sundari 2011 : les kiosques et la foule sous les arbres."],
+  ['114-img-1710.jpg', "Sundari 2011 : la console, avec la scène couverte au fond."],
+  ['112-img-1609.jpg', "Sundari 2011 : la scène de forêt allumée."],
+  ['440-img-0547.jpg', "Sundari 2011 : la construction du décor de scène, juste avant."],
+  ['444-img-0552.jpg', "Sundari 2011 : sous la scène, les haut-parleurs et les tissus."],
+  ['445-img-0554.jpg', "« Zone à feu » : le camp de Sundari 2011, au matin."],
+  ['458-img-0895.jpg', "Juillet 2011 : la scène mauve et la foule."],
+  ['459-img-0970.jpg', "Tatanka 2011 : sous la bâche, les lumières."],
+  ['517-img-0882.jpg', "La foule devant la scène, dans la lumière bleue, 2011."],
+  ['146-260421-10150273745959744-629354743-89950.jpg', "Le dancefloor de jour, un DJ au fond. Photo Renaud Kasma, 2011."],
+  ['145-260268-10150360403253438-829448437-10086.jpg', "Le foin qu'on transporte pour les lits, 2011."],
+  ['140-222928-10150308813433438-829448437-96129.jpg', "La cabine du DJ sous ses lampes, 2011."],
+  ['121-dsc05270.jpg', "Earthdance 2011 : la cabane-cabine de DJ, vue d'en haut."],
+  ['122-dsc05272.jpg', "Earthdance 2011 : sous les rideaux rouges de la cabine."],
+  ['296-earthdance2012.jpg', "Earthdance 2012 : la prière pour la paix, en cercle, la nuit du 22 septembre."],
+  ['574-297922-10150467142868438-829448437-11106.jpg', "2012 : la cabane du Cherry Island décorée pour Earthdance, avec son échelle.", 'tall'],
+  ['578-306977-10150467465733438-829448437-11109.jpg', "2012 : la foule sous la toile bleue."],
+  ['583-319089-10150465489698438-829448437-11093.jpg', "2012 : le salon extérieur, entre deux sets."],
+  ['009-agora-earthdance-cherry.jpg', "Earthdance 2013 : sur l'herbe du Cherry Island."],
+  ['010-earthdance-neverland.jpg', "Earthdance 2013 : le Neverland en pleine nuit."],
+  ['011-earthdance-epic-s-painting.jpg', "Earthdance 2013 : la peinture d'Epic, la scène vue par un peintre."],
+  ['006-img-9922-2.jpg', "« AGORA » écrit à la lumière, février 2013, dans le bunker."],
+  ['014-884944-509242975781498-295473984-o.jpg', "Le même light painting, plus large."],
+  ['189-63532-1522107687559-1080595924-31425721-.jpg', "Une nuit de festival, guirlandes et projecteurs."],
+  ['172-37797-10150246711385045-787915044-140474.jpg', "Une toile tendue sur la scène, la nuit.", 'tall'],
+  ['161-302785-10150299695753904-665563903-76013.jpg', "Le camp dans la boue, un jour de pluie."],
+  ['179-39862-10150246709230045-787915044-140473.jpg', "Le ciel au-dessus du site.", 'tall'],
+];
+---
+<Base title="Les événements" current="/evenements/">
+  <p class="eyebrow">Les événements</p>
+  <h1>Earthdance, Sundari, Tatanka et les autres</h1>
+  <p class="lede">Cinq Earthdance, trois Tatanka, un Sundari, un Reggae Bash, des solstices, des pleines lunes, un campement autogéré, des cérémonies. Tout ce que la page et les sites ont annoncé, dans l'ordre.</p>
+
+  <div class="prose">
+    <h2>Earthdance, la danse mondiale pour la paix</h2>
+    <p>Earthdance est un festival synchronisé, « dans 60 pays et plus de 200 endroits dans le monde », autour de la Journée internationale de la paix, avec une prière pour la paix jouée au même moment partout. Saint-Fortunat en a accueilli dès 2007 et 2008 ; le Donjon, puis L'AgorA, l'ont repris chaque automne de 2010 à 2014, devenant un lieu officiel Earthdance et, en 2013, un « organisme bâtisseur de paix » reconnu par Earthdance Global. « Pour une dernière année présentée à l'AgorA, on vous invite à venir manifester, à votre façon, selon vos inspirations, ce qu'est pour vous la paix dans le monde. »</p>
+  </div>
+
+  <ul class="events">
+    {events.map(([d, title, text]) => (
+      <li><span>{d}</span><div><strong>{title}</strong>{text && <> — {text}</>}</div></li>
+    ))}
+  </ul>
+
+  <h2 class="eyebrow" style="margin-top:2.5rem">Les affiches</h2>
+  <div class="gallery">
+    {affiches.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <h2 class="eyebrow">Les soirs de fête</h2>
+  <div class="gallery">
+    {photos.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <div class="prose">
+    <h2>Les règlements du site, 2013</h2>
+    <p>Le texte remis aux festivaliers de Tatanka et d'Earthdance 2013 commençait par une mise au point : « Lorsque vous visitez l'Agora, vous entrez dans la demeure et lieu de travail de plusieurs personnes qui souhaitent partager avec vous la vision d'un monde créatif en harmonie avec la nature. » Puis venaient les règles, dans les deux langues :</p>
+    <ul>
+      <li>« Respectez nos espaces agricoles, ils nous sont sacrés !! »</li>
+      <li>« Quand vous circulez dans le village de St-Fortunat, ne pas crier SVP ! »</li>
+      <li>Interdit de stationner sur la route 263 : « vous allez recevoir de la police un ticket de 60 $, demandez au préposé au stationnement pour un emplacement ».</li>
+      <li>« N'utilisez QUE LES 8 TOILETTES SÈCHES et n'allez surtout pas de l'autre côté de la route 263, vu le nombre de plaintes qu'on a reçues. »</li>
+      <li>« La musique du MAIN sera à l'intérieur du BUNKER de minuit à 8 AM, un CHILL stage sera à l'extérieur la nuit et plusieurs activités dans la forêt sont prévues. »</li>
+      <li>Interdiction formelle de fumer dans la grange ; aucune bouteille de verre, « amenez des canettes s'il vous plaît » ; tri des déchets.</li>
+      <li>« Arrivez préparés avec votre nourriture, votre sac de couchage, du linge chaud, une serviette, une lampe de poche, un imperméable… »</li>
+      <li>« SVP gardez vos mégots de cigarettes pour en disposer dans le feu… parce que ça peut prendre des semaines avant de tout ramasser ces mégots qu'on voit sur le sol par centaines. »</li>
+      <li>« Les feux ne seront permis qu'aux endroits désignés. AUCUNS feux ne seront tolérés dans les plantations d'épinettes. Le sol peut prendre en feu à tout moment. »</li>
+    </ul>
+    <p>« Merci de votre participation, compréhension et vigilance !! »</p>
+    <h2>Le line-up d'Earthdance 2011</h2>
+    <p>Du vendredi soir au dimanche après-midi, presque sans arrêt, avec deux pauses « let's take a walk on the wild side » : DJ Shalom, DJ YvY, DJane Fatima, DJ MadChris, DJ Psychotik, Celktik et Kinematik, DJ Audiophil, DJ Tegavs, DJ Naaz, DJ Risa, DJ Prana Papa, Eric Mandala live, DJ Om Shanti, DJane Lemon Balm, DJ Karmapa, DJ Jeff MKUltra, DJ Rikam, DJ Decode, Longstocking & Boom Tara, DJ Magnetic Phil, DJ Spo_Onani, DJ Glitch, et pour finir « A gore A ». Styles annoncés : world psy, tek-trance, tribal house, dubstep, full on, psytrance, cumbia, world music, goa, progressive, techno minimal.</p>
+    <h2>Le covoiturage</h2>
+    <p>Un groupe public de 248 membres, « Co-voiturage // Ride-share → AgorA », organisait les transports « en tout temps en direction de l'Agora ». Pour Earthdance 2013 : « Does anyone have a bus/van/camper he would like to fill with riders and get his gas paid ? » Et pour tous les festivals, la même consigne qu'au Donjon : « Essayons de co-voiturer. »</p>
+  </div>
+</Base>

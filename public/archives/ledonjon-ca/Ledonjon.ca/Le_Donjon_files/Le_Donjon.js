@@ -1,0 +1,11 @@
+// Created by iWeb 3.0.2 local-build-20101229
+
+setTransparentGifURL('Media/transparent.gif');function applyEffects()
+{var registry=IWCreateEffectRegistry();registry.registerEffects({stroke_0:new IWEmptyStroke(),stroke_5:new IWEmptyStroke(),stroke_3:new IWEmptyStroke(),reflection_5:new IWReflection({opacity:0.55,offset:1.00}),shadow_5:new IWShadow({blurRadius:10,offset:new IWPoint(1.5898,2.5441),color:'#000000',opacity:0.630000}),reflection_3:new IWReflection({opacity:0.50,offset:1.00}),shadow_10:new IWShadow({blurRadius:10,offset:new IWPoint(4.2426,4.2426),color:'#000000',opacity:0.750000}),shadow_3:new IWShadow({blurRadius:10,offset:new IWPoint(1.5898,2.5441),color:'#000000',opacity:0.630000}),reflection_2:new IWReflection({opacity:0.50,offset:1.00}),reflection_1:new IWReflection({opacity:0.50,offset:2.00}),shadow_7:new IWShadow({blurRadius:10,offset:new IWPoint(1.5898,2.5441),color:'#000000',opacity:0.630000}),shadow_1:new IWShadow({blurRadius:10,offset:new IWPoint(1.5898,2.5441),color:'#000000',opacity:0.630000}),shadow_4:new IWShadow({blurRadius:10,offset:new IWPoint(1.5898,2.5441),color:'#000000',opacity:0.630000}),stroke_2:new IWEmptyStroke(),reflection_0:new IWReflection({opacity:0.50,offset:2.00}),stroke_1:new IWEmptyStroke(),shadow_8:new IWShadow({blurRadius:10,offset:new IWPoint(4.2426,4.2426),color:'#000000',opacity:0.750000}),stroke_7:new IWEmptyStroke(),stroke_6:new IWEmptyStroke(),shadow_9:new IWShadow({blurRadius:10,offset:new IWPoint(4.2426,4.2426),color:'#000000',opacity:0.750000}),shadow_0:new IWShadow({blurRadius:10,offset:new IWPoint(1.5898,2.5441),color:'#000000',opacity:0.630000}),stroke_4:new IWEmptyStroke(),reflection_4:new IWReflection({opacity:0.32,offset:1.00}),shadow_6:new IWShadow({blurRadius:10,offset:new IWPoint(4.2426,4.2426),color:'#000000',opacity:0.750000}),shadow_2:new IWShadow({blurRadius:10,offset:new IWPoint(1.5898,2.5441),color:'#000000',opacity:0.630000})});registry.applyEffects();}
+function hostedOnDM()
+{return false;}
+function onPageLoad()
+{loadMozillaCSS('Le_Donjon_files/Le_DonjonMoz.css')
+adjustLineHeightIfTooBig('id1');adjustFontSizeIfTooBig('id1');Widget.onload();fixupAllIEPNGBGs();fixAllIEPNGs('Media/transparent.gif');applyEffects()}
+function onPageUnload()
+{Widget.onunload();}

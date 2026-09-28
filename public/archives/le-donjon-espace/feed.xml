@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <id>urn:iweb:B06202F5-F3FD-4872-9527-F7BD9E5D1D5A</id>
+ <title>Page list Atom feed</title>
+ <updated>2010-04-01T21:32:02-04:00</updated>
+ <link rel="self" href="feed.xml"/>
+ <generator>iWeb</generator>
+ <author>
+  <name>iWeb</name>
+ </author>
+ <entry>
+  <id>urn:iweb:023C915E-355C-462B-8410-1C72737200EF</id>
+  <title>Espace Créatif</title>
+  <title xmlns="urn:iweb:">Espace Créatif</title>
+  <in-navbar xmlns="urn:iweb:">023C915E-355C-462B-8410-1C72737200EF</in-navbar>
+  <link rel="alternate" href="Espace_Creatif.html"/>
+  <updated>2010-04-01T21:32:02.001-04:00</updated>
+  <content>Espace Créatif</content>
+ </entry>
+</feed>

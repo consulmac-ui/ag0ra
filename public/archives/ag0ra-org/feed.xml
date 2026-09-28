@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <id>urn:iweb:FC2F27C9-8947-4A16-8582-322D8DBAE06A</id>
+ <title>Page list Atom feed</title>
+ <updated>2013-09-11T11:10:03-04:00</updated>
+ <link rel="self" href="feed.xml"/>
+ <generator>iWeb</generator>
+ <author>
+  <name>iWeb</name>
+ </author>
+ <entry>
+  <id>urn:iweb:8A78E74B-9CB1-49B2-BD27-D3E1A1A4D1D2</id>
+  <title>Acceuil</title>
+  <title xmlns="urn:iweb:">Acceuil</title>
+  <in-navbar xmlns="urn:iweb:">8A78E74B-9CB1-49B2-BD27-D3E1A1A4D1D2</in-navbar>
+  <link rel="alternate" href="Acceuil.html"/>
+  <updated>2013-09-11T11:10:03.001-04:00</updated>
+  <content>Acceuil</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:C45A7044-BE44-4DE2-AAAC-65BFFE30BEC4</id>
+  <title>Qui sommes nous</title>
+  <title xmlns="urn:iweb:">Qui sommes nous</title>
+  <in-navbar xmlns="urn:iweb:">C45A7044-BE44-4DE2-AAAC-65BFFE30BEC4</in-navbar>
+  <link rel="alternate" href="Qui_sommes_nous.html"/>
+  <updated>2013-09-11T11:10:03.002-04:00</updated>
+  <content>Qui sommes nous</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:F26D7C8D-DAC0-4BE5-8B05-3A7E2076E85A</id>
+  <title>Produits</title>
+  <title xmlns="urn:iweb:">Produits</title>
+  <in-navbar xmlns="urn:iweb:">F26D7C8D-DAC0-4BE5-8B05-3A7E2076E85A</in-navbar>
+  <link rel="alternate" href="Produits.html"/>
+  <updated>2013-09-11T11:10:03.003-04:00</updated>
+  <content>Produits</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:93797910-093B-4929-B872-A6520702B675</id>
+  <title>champignons frais ou sechés</title>
+  <title xmlns="urn:iweb:">champignons frais ou sechés</title>
+  <in-navbar xmlns="urn:iweb:">93797910-093B-4929-B872-A6520702B675</in-navbar>
+  <link rel="alternate" href="champignons_frais_ou_seches.html"/>
+  <updated>2013-09-11T11:10:03.004-04:00</updated>
+  <content>champignons frais ou sechés</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:B6447069-D35E-453E-9DF5-633E79180A5A</id>
+  <title>Produits de cultures</title>
+  <title xmlns="urn:iweb:">Produits de cultures</title>
+  <in-navbar xmlns="urn:iweb:">B6447069-D35E-453E-9DF5-633E79180A5A</in-navbar>
+  <link rel="alternate" href="Produits_de_cultures.html"/>
+  <updated>2013-09-11T11:10:03.005-04:00</updated>
+  <content>Produits de cultures</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:B9FAEFB8-692B-4B50-96A0-952EA45703DD</id>
+  <title>Plantes sauvages</title>
+  <title xmlns="urn:iweb:">Plantes sauvages</title>
+  <in-navbar xmlns="urn:iweb:">B9FAEFB8-692B-4B50-96A0-952EA45703DD</in-navbar>
+  <link rel="alternate" href="Plantes_sauvages.html"/>
+  <updated>2013-09-11T11:10:03.006-04:00</updated>
+  <content>Plantes sauvages</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:C0F1590E-0842-43B6-8ACD-3F6C0B63219C</id>
+  <title>Légumes</title>
+  <title xmlns="urn:iweb:">Légumes</title>
+  <in-navbar xmlns="urn:iweb:">C0F1590E-0842-43B6-8ACD-3F6C0B63219C</in-navbar>
+  <link rel="alternate" href="Legumes.html"/>
+  <updated>2013-09-11T11:10:03.007-04:00</updated>
+  <content>Légumes</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:B40EAD7C-B467-4E2C-9D32-4EF200066CAE</id>
+  <title>activités</title>
+  <title xmlns="urn:iweb:">activités</title>
+  <in-navbar xmlns="urn:iweb:">B40EAD7C-B467-4E2C-9D32-4EF200066CAE</in-navbar>
+  <link rel="alternate" href="activites.html"/>
+  <updated>2013-09-11T11:10:03.008-04:00</updated>
+  <content>activités</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:111C5612-CAC8-43D1-B1F1-04980D5AB1E6</id>
+  <title>Nous joindre</title>
+  <title xmlns="urn:iweb:">Nous joindre</title>
+  <in-navbar xmlns="urn:iweb:">111C5612-CAC8-43D1-B1F1-04980D5AB1E6</in-navbar>
+  <link rel="alternate" href="Nous_joindre.html"/>
+  <updated>2013-09-11T11:10:03.009-04:00</updated>
+  <content>Nous joindre</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:E20F21F3-041B-4A98-B91A-1217D0886034</id>
+  <title>ÉVENEMENTS PASSÉS</title>
+  <title xmlns="urn:iweb:">ÉVENEMENTS PASSÉS</title>
+  <in-navbar xmlns="urn:iweb:">E20F21F3-041B-4A98-B91A-1217D0886034</in-navbar>
+  <link rel="alternate" href="EVENEMENTS_PASSES.html"/>
+  <updated>2013-09-11T11:10:03.010-04:00</updated>
+  <content>ÉVENEMENTS PASSÉS</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:D0CAF9FC-16A1-43E0-AEAD-53865F331D7F</id>
+  <title>En.Acceuil </title>
+  <title xmlns="urn:iweb:">En.Acceuil </title>
+  <in-navbar xmlns="urn:iweb:">D0CAF9FC-16A1-43E0-AEAD-53865F331D7F</in-navbar>
+  <link rel="alternate" href="En.Acceuil.html"/>
+  <updated>2013-09-11T11:10:03.011-04:00</updated>
+  <content>En.Acceuil </content>
+ </entry>
+ <entry>
+  <id>urn:iweb:75A47504-9ABB-425C-AF01-6D5FD4B06622</id>
+  <title>En.Produits </title>
+  <title xmlns="urn:iweb:">En.Produits </title>
+  <in-navbar xmlns="urn:iweb:">75A47504-9ABB-425C-AF01-6D5FD4B06622</in-navbar>
+  <link rel="alternate" href="En.Produits.html"/>
+  <updated>2013-09-11T11:10:03.012-04:00</updated>
+  <content>En.Produits </content>
+ </entry>
+ <entry>
+  <id>urn:iweb:EDEFFA30-FDBC-40EA-A7D0-8FDF998B7367</id>
+  <title>En.champignons frais </title>
+  <title xmlns="urn:iweb:">En.champignons frais </title>
+  <in-navbar xmlns="urn:iweb:">EDEFFA30-FDBC-40EA-A7D0-8FDF998B7367</in-navbar>
+  <link rel="alternate" href="En.champignons_frais.html"/>
+  <updated>2013-09-11T11:10:03.013-04:00</updated>
+  <content>En.champignons frais </content>
+ </entry>
+ <entry>
+  <id>urn:iweb:140AFEC6-0DFB-4869-AADC-EDF31F058C12</id>
+  <title>En. produits de culture</title>
+  <title xmlns="urn:iweb:">En. produits de culture</title>
+  <in-navbar xmlns="urn:iweb:">140AFEC6-0DFB-4869-AADC-EDF31F058C12</in-navbar>
+  <link rel="alternate" href="En._produits_de_culture.html"/>
+  <updated>2013-09-11T11:10:03.014-04:00</updated>
+  <content>En. produits de culture</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:E0020557-A2BE-4CE8-99C4-FDD0703B6176</id>
+  <title>En.CONTACT US</title>
+  <title xmlns="urn:iweb:">En.CONTACT US</title>
+  <in-navbar xmlns="urn:iweb:">E0020557-A2BE-4CE8-99C4-FDD0703B6176</in-navbar>
+  <link rel="alternate" href="En.CONTACT_US.html"/>
+  <updated>2013-09-11T11:10:03.015-04:00</updated>
+  <content>En.CONTACT US</content>
+ </entry>
+</feed>

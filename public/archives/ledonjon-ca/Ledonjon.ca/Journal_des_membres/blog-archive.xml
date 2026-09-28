@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<rss xmlns:iweb="http://www.apple.com/iweb" version="2.0">
+  <channel>
+    <title>Journal des membres</title>
+    <link>http://www.ledonjon.ca/Ledonjon.ca/Journal_des_membres</link>
+    <description>Envoyer votre article sur :
+Info@ledonjon.ca
+
+Quelques sujets privil&#xE9;gi&#xE9;s :
+
+Informations sans jugements sur toutes activit&#xE9;s artistiques - danse, peinture, musique, th&#xE9;&#xE2;tre, ...
+
+Constatations pertinentes et avancement de solutions positives sur nos sujets pr&#xE9;f&#xE9;r&#xE9;s d&#x2019;actualit&#xE9;, mais o&#xF9; en sommes nous rendus?
+
+</description>
+    <item>
+      <title>Mise &#xE0; jour du site internet ledonjon.ca</title>
+      <link>http://www.ledonjon.ca/Ledonjon.ca/Journal_des_membres/Entrees/2010/11/12_Mise_a_jour_du_site_internet_ledonjon.ca.html</link>
+      <guid isPermaLink="false">8351c1fd-dc86-46b0-baac-567ec658bea4</guid>
+      <pubDate>Fri, 12 Nov 2010 13:03:18 -0500</pubDate>
+      <iweb:comment enabled="0" count="0" link="http://www.ledonjon.ca/Ledonjon.ca/Journal_des_membres/Entrees/2010/11/12_Mise_a_jour_du_site_internet_ledonjon.ca.html#comment_layer"></iweb:comment>
+    </item>
+    <iweb:dateFormat>EEEE d MMMM yyyy</iweb:dateFormat>
+    <iweb:baseURL>http://www.ledonjon.ca/Ledonjon.ca/Journal_des_membres</iweb:baseURL>
+    <iweb:maximumSummaryItems>5</iweb:maximumSummaryItems>
+  </channel>
+</rss>

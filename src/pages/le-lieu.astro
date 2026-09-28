@@ -1,0 +1,135 @@
+---
+import Base from '../layouts/Base.astro';
+const plans = [
+  ['013-1115924-574389092600219-1707538609-o.jpg', "Le plan de L'AgorA dessiné en 2013 : la maison et le bunker près de la route, le ruisseau, le Cherry Island, les scènes, les cabanes, le sentier vers l'observatoire.", 'doc'],
+  ['610-plan-agora-festival.jpg', "Le plan festival (juin 2013) : stationnements, camping, scènes, cuisine, île.", 'doc'],
+];
+const lieux = [
+  ['386-img-0446.jpg', "30 mai 2010 : le camion de déménagement devant la maison au toit rouge, 81 route 263."],
+  ['390-img-0149.jpg', "La maison, juin 2010."],
+  ['391-img-0154.jpg', "La grange dans le champ fleuri, juin 2010."],
+  ['481-img-0348.jpg', "Le bunker sous la neige, avec ses portes de garage, hiver 2011."],
+  ['483-img-0457.jpg', "La cuisine et les loges du bunker, murs rouges, mai 2011."],
+  ['558-img-1457.jpg', "Une loge du bunker aménagée en chambre, tissus rouges, novembre 2011."],
+  ['584-320046-10150564960528438-829448437-11655.jpg', "La grande salle du bunker, tendue de tissus, avec ses chaises de jardin, 2012."],
+  ['046-page7.jpg', "La salle commune du bunker, janvier 2013 : plancher de bois, tables, poêle."],
+  ['455-img-0738.jpg', "Juillet 2011 : le panneau peint à la main devant la galerie de la maison. « Camping : site enchanteur, lac, rivière, sentiers, électricité, eau courante. »"],
+  ['462-img-0998.jpg', "La cabane d'accueil au toit rouge, à l'entrée du site, août 2011."],
+  ['463-img-0999.jpg', "Le chemin d'entrée, avec l'écriteau de bienvenue."],
+];
+const foret = [
+  ['491-img-0577.jpg', "Le Cherry Island : la cabane au bord de l'eau et son hamac au-dessus du ruisseau, 2011."],
+  ['492-img-0579.jpg', "Le Cherry Island vu de l'autre rive."],
+  ['571-cuisine-d-ete-et-cherry-island-in-back.jpg', "La cuisine d'été, avec le Cherry Island derrière, juin 2012."],
+  ['221-amandine-cuisineext-tatanka.jpg', "La cuisine extérieure pendant Tatanka."],
+  ['280-photo-chery-amandine-hiver.jpg', "Le Cherry Island en hiver."],
+  ['490-img-0561.jpg', "Le pont de rondins sur le ruisseau."],
+  ['532-img-1022.jpg', "Une passerelle de bois rond entre les épinettes."],
+  ['503-img-0670.jpg', "Le trottoir de rondins dans les herbes hautes."],
+  ['393-img-0164.jpg', "Le premier petit pont, juin 2010."],
+  ['500-img-0646.jpg', "La cascade du ruisseau."],
+  ['501-img-0667.jpg', "Le champ de fleurs sauvages et la vallée."],
+  ['486-img-0537.jpg', "La plantation d'épinettes, en rangs."],
+];
+const cabanes = [
+  ['345-l-ascension.jpg', "L'Ascension, cabane dans les arbres, « avec vue imprenable sur le tipi, le ruisseau et le Cherry Island », 2013.", 'tall'],
+  ['356-la-riverain.jpg', "La Riveraine, au-dessus du ruisseau."],
+  ['020-la-riveraine-treehouse.jpg', "La Riveraine, la nuit, éclairée de l'intérieur.", 'tall'],
+  ['343-le-cubehouse.jpg', "Le CubeHouse, sur pilotis dans la forêt.", 'tall'],
+  ['003-img-2424.jpg', "Une plateforme au toit vert, entre les troncs, juillet 2012."],
+  ['004-img-2425.jpg', "Le tipi et la yourte dans la clairière, juillet 2012.", 'tall'],
+  ['005-img-2448.jpg', "La cabane aux drapeaux jaunes, sur le sentier.", 'tall'],
+  ['448-img-0562.jpg', "Une des premières plateformes, juin 2011."],
+  ['566-img-2276.jpg', "La charpente du tipi mandala, 25 pieds, deux étages, juin 2012.", 'tall'],
+  ['359-teepee-et-girls.jpg', "Le tipi terminé, avec sa peau de bois, 2013.", 'tall'],
+  ['339-dans-le-teepee.jpg', "Dans le tipi, à la lumière rouge."],
+  ['361-yourte1.jpg', "La yourte, au bout de l'allée d'épinettes.", 'tall'],
+  ['168-335453-10150457295163438-829448437-11047.jpg', "La yourte et son chien de garde."],
+  ['567-img-2280.jpg', "Dans la yourte, une chaise et une lampe."],
+  ['550-img-1441.jpg', "La yourte en novembre 2011."],
+  ['543-l-agora-bouddha.jpg', "Le bouddha de L'AgorA sous son tripode, dans l'herbe."],
+];
+const scenes = [
+  ['354-stage-update.jpg', "Le Neverland, septembre 2013 : scène en bois rond, toile bleue, decks accrochés aux arbres."],
+  ['350-neverland-en-construction.jpg', "Le Neverland en construction, la nuit, sous les projecteurs."],
+  ['346-neverland-surround.jpg', "Panorama du Neverland dans les épinettes.", 'wide'],
+  ['010-earthdance-neverland.jpg', "La scène du Neverland pendant Earthdance 2013."],
+  ['487-img-0538.jpg', "La charpente en bois rond de la scène couverte, 2011."],
+  ['488-img-0540.jpg', "La scène couverte en chantier : échelle, bâche, guirlandes."],
+  ['502-img-0668.jpg', "La scène de forêt terminée, avec sa toile et sa jupe de tissu."],
+  ['446-img-0558.jpg', "Le dôme géodésique et ses haut-parleurs, juin 2011."],
+  ['409-img-0690.jpg', "La toute première scène, au bord de l'étang, 15 août 2010."],
+  ['454-img-0732.jpg', "La cabine du DJ en forêt, juillet 2011."],
+  ['438-img-0535.jpg', "Les colonnes de haut-parleurs dans la porte du bunker, juin 2011.", 'tall'],
+  ['589-382967-10150621849818438-829448437-11830.jpg', "Le studio, avec ses moniteurs et son écran, 2012.", 'tall'],
+  ['451-img-0647.jpg', "Le bureau de L'AgorA : deux portables, une fenêtre sur les arbres, Wi-Fi partout, 2011."],
+  ['383-tour-observatoire.jpg', "La tour d'observation de Saint-Fortunat, au sommet de la montagne, au bout du sentier."],
+  ['073-487405-10152149019935154-838655942-n.jpg', "La vue depuis la montagne sur la vallée, à l'automne."],
+];
+---
+<Base title="Le lieu" current="/le-lieu/">
+  <p class="eyebrow">Le lieu</p>
+  <h1>81, route 263</h1>
+  <p class="lede">Une terre de 104 acres à Saint-Fortunat, dans les Appalaches, « 2 h 15 de Montréal, 1 h 15 de Québec ». Ce qu'il y avait, et ce que les Agoriens y ont bâti.</p>
+
+  <div class="prose">
+    <p>Selon l'annonce publiée par le collectif en 2014 : « sur la terre de l'Agora, y'a une petite rivière, un bon ruisseau, un petit lac, une bâtisse isolée de 180 pieds par 40, une grange et écurie, une maison, un sentier pédestre régional, quatre plantations d'épinettes dues pour être coupées en planches pour bâtir, 2 500 érables prêts pour une érablière, une montagne et sommet, et la terre est de 104 acres ».</p>
+    <p>Et, d'après la description de 2012 : « Le bâtiment principal de l'Agora comprend des loges, des chambres, une cuisine, des douches et une grande salle commune avec scène, le tout chauffé au bois pour un parfait confort pendant la saison hivernale. Sur notre terre se trouvent quatre cabanes dans des arbres, deux scènes en forêt, le Cherry Island, la grange et une yourte, tous dotés d'électricité et d'accès internet sans fil. Il est également possible de parcourir un magnifique sentier pédestre qui mène à la tour de l'observatoire de St-Fortunat au sommet de la montagne. »</p>
+  </div>
+
+  <div class="facts">
+    <div class="fact"><strong>Le bunker</strong><span>l'ancienne porcherie de 180 × 40 pieds : loges, chambres, cuisine, douches, grande salle avec scène, poêle à bois</span></div>
+    <div class="fact"><strong>Le Cherry Island</strong><span>l'île aux cerises, au milieu du ruisseau : cabane, cuisine d'été, feu, plage, hamac</span></div>
+    <div class="fact"><strong>Le Neverland</strong><span>la scène en bois rond de 2013, avec ses decks dans les arbres et ses passerelles</span></div>
+    <div class="fact"><strong>5 treehouses</strong><span>l'Ascension, la Riveraine, le CubeHouse et les autres, avec électricité et Wi-Fi</span></div>
+    <div class="fact"><strong>Le tipi mandala</strong><span>25 pieds, deux étages, « pour vos acrobaties »</span></div>
+    <div class="fact"><strong>La yourte</strong><span>huit dormeurs, électricité et Wi-Fi, au bout de l'allée d'épinettes</span></div>
+    <div class="fact"><strong>La grange</strong><span>vingt hamacs, « plus chaude et sèche que dehors »</span></div>
+    <div class="fact"><strong>L'observatoire</strong><span>la tour au sommet de la montagne, au bout du sentier pédestre régional</span></div>
+  </div>
+
+  <div class="prose">
+    <h2>Le camping de L'AgorA, en 2012</h2>
+    <p>« Veuillez noter que toutes les accommodations ont des prises électriques, lumières et Wi-Fi. Une yourte en location à 100 $ pour les trois nuits du weekend, qui peut loger 8, avec électricité et Wi-Fi. Deux treehouses en location à 60 $ chacune, qui peuvent loger 4, avec lit en foin pour garder au chaud (efficace, et génère de la chaleur toutes saisons). La grange, qui peut avoir 20 hamacs et qui est plus chaude et sèche que dehors, peut héberger 25 personnes avec des lits ou matelas gonflables. L'Agora lui-même a 5 loges en location à 75 $ qui peuvent héberger 4 chacune, à côté du poêle à bois. » Camping, 10 $ la nuit par personne, « incluant accès aux deux systèmes de son ».</p>
+    <h2>Les plans</h2>
+  </div>
+  <div class="gallery">
+    {plans.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <h2 class="eyebrow">La maison, le bunker, l'entrée</h2>
+  <div class="gallery">
+    {lieux.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <h2 class="eyebrow">Le ruisseau, l'île, les ponts</h2>
+  <div class="gallery">
+    {foret.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <h2 class="eyebrow">Les cabanes, le tipi, la yourte</h2>
+  <div class="gallery">
+    {cabanes.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <h2 class="eyebrow">Les scènes, le son, le bureau, la montagne</h2>
+  <div class="gallery">
+    {scenes.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <div class="prose">
+    <h2>Le travail</h2>
+    <p>« Nos installations et nos constructions sont conçues majoritairement de matériaux recyclés, d'amour et de dévotion ! » écrivait le collectif. Les chiffres, eux, sont ceux de la page Facebook : trois ans de travaux en juin 2013 ; « 36 mois et plus de 4 000 heures de travail » en mai 2013 ; quatre ans d'existence le 9 juin 2014, « que d'évolution, d'enseignements et de travaux pendant ces années folles ». Le déblayage du bunker, les loges, les passerelles, les scènes, les cabanes, le tipi, l'électricité et le réseau jusque dans la forêt : tout a été fait à la main, par quatre à six personnes selon les saisons, et par les amis venus « faire leur tour ».</p>
+    <blockquote><p>« Ça peut paraître impossible pour les intellos, mais ça prend juste quatre personnes motivées et deux jours de travaux. Un excellent défi et un apprentissage de vie en nature. »</p><cite>Appel à la construction d'une scène permanente dans les arbres, septembre 2012</cite></blockquote>
+  </div>
+</Base>

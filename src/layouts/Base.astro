@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+const { title, description = "L'AgorA de Saint-Fortunat (2010–2014) : un sanctuaire en forêt bâti à la main par des créateurs hors norme. Cabanes dans les arbres, scènes en forêt, festivals, permaculture. L'archive.", current = '', image = '/img/227-cherry-island.jpg' } = Astro.props;
+const nav = [
+  ['/', 'Accueil'],
+  ['/histoire/', 'Histoire'],
+  ['/le-donjon/', 'Le Donjon'],
+  ['/le-lieu/', 'Le lieu'],
+  ['/mission/', 'Mission'],
+  ['/chronologie/', 'Chronologie'],
+  ['/evenements/', 'Événements'],
+  ['/photos/', 'Photos'],
+  ['/videos/', 'Vidéos'],
+  ['/voix/', 'Voix'],
+  ['/apres/', 'Après'],
+  ['/archives/', 'Archives'],
+];
+const fullTitle = title ? `${title} · L'AgorA` : "L'AgorA — Saint-Fortunat, 2010–2014";
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip" href="#contenu">Aller au contenu</a>
+    <header class="site">
+      <div class="site-inner">
+        <a class="brand" href="/">
+          <img src="/img/026-tree-door.jpg" alt="" width="46" height="46" />
+          <span><strong>L'AgorA</strong><small>Saint-Fortunat · 2010–2014</small></span>
+        </a>
+        <nav class="main" aria-label="Principale">
+          {nav.map(([href, label]) => (
+            <a href={href} aria-current={current === href ? 'page' : undefined}>{label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+    <main id="contenu">
+      <slot />
+    </main>
+    <footer class="site">
+      <div class="site-inner">
+        <p>L'AgorA, 81 route 263, Saint-Fortunat (Chaudière-Appalaches, Québec), 2010–2014. Anciennement Le Donjon, grandeur nature. Site-archive assemblé en 2026 par Christian Brochu, cofondateur, à partir des archives du collectif : les sites ag0ra.org et ledonjon.ca, la page Facebook de L'AgorA, les brochures, les photos et les vidéos conservées.</p>
+        <p>Les textes d'époque sont reproduits tels quels, avec leur orthographe et leur enthousiasme. Les personnes citées le sont par leur prénom ou leur nom d'artiste, tels qu'ils apparaissaient publiquement à l'époque. Photos : membres et amis de L'AgorA, 2009–2014, sauf mention.</p>
+        <p>Voir aussi <a href="https://guindonville.pages.dev">Guindonville (Val-David, 2003)</a>, l'autre combat, et <a href="https://consulmac.com">consulmac.com</a>.</p>
+      </div>
+    </footer>
+  </body>
+</html>

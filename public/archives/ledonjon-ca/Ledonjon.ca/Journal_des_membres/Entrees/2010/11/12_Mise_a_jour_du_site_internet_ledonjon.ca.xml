@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<content collectionGUID="7F41228B-92C4-4553-B475-F6F4F731AFB2">
+  <lastEdited clientType="local-build-20101129" date="2010-11-29 11:45:30 -0500"/>
+  <textBox id="generic-header-attribute" dynamic="no" visible="yes">
+    <richText>le monde du donjon</richText>
+  </textBox>
+  <textBox id="generic-title-attributes" dynamic="no" visible="yes">
+    <richText>Mise &#xE0; jour du site internet ledonjon.ca</richText>
+  </textBox>
+  <textBox id="generic-datefield-attributes" dynamic="no" visible="yes">
+    <richText>vendredi 12 novembre 2010</richText>
+  </textBox>
+  <image id="generic-picture-attributes" dynamic="no" visible="yes" src="12_Mise_a_jour_du_site_internet_ledonjon.ca_files/shapeimage_1.png" left="0px" top="0px" width="420px" height="200px"/>
+  <textBox id="generic-body-attributes" dynamic="no" visible="yes">
+    <richText>Enfin voil&#xE0; un premier jet apr&#xE8;s plusieurs mois d&#x2019;inactivit&#xE9; et un d&#xE9;m&#xE9;nagement en r&#xE9;gion de l&#x2019;&#xE9;tablissement ... du neuf et du am&#xE9;lior&#xE9;, &#xE7;a fait du bien!  @ suivre!</richText>
+  </textBox>
+</content>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <id>urn:iweb:EA79F004-1F37-4D4E-8BAF-1455DB03EE14</id>
+ <title>Page list Atom feed</title>
+ <updated>2010-12-29T11:10:23-05:00</updated>
+ <link rel="self" href="feed.xml"/>
+ <generator>iWeb</generator>
+ <author>
+  <name>iWeb</name>
+ </author>
+ <entry>
+  <id>urn:iweb:2D9961CF-BBA5-4E15-B2B2-07D9FB195A7E</id>
+  <title>Accueil</title>
+  <title xmlns="urn:iweb:">Accueil</title>
+  <in-navbar xmlns="urn:iweb:">2D9961CF-BBA5-4E15-B2B2-07D9FB195A7E</in-navbar>
+  <link rel="alternate" href="Accueil.html"/>
+  <updated>2010-12-29T11:10:23.001-05:00</updated>
+  <content>Accueil</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:9076DBD9-7A4E-41E5-B5EE-0C2F10EEFE09</id>
+  <title>Le Donjon</title>
+  <title xmlns="urn:iweb:">Le Donjon</title>
+  <in-navbar xmlns="urn:iweb:">9076DBD9-7A4E-41E5-B5EE-0C2F10EEFE09</in-navbar>
+  <link rel="alternate" href="Le_Donjon.html"/>
+  <updated>2010-12-29T11:10:23.002-05:00</updated>
+  <content>Le Donjon</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:7C4EE759-49BC-4558-B8D4-44AFA2D211AA</id>
+  <title>Le Camping Énergétique</title>
+  <title xmlns="urn:iweb:">Le Camping Énergétique</title>
+  <in-navbar xmlns="urn:iweb:">7C4EE759-49BC-4558-B8D4-44AFA2D211AA</in-navbar>
+  <link rel="alternate" href="Le_Camping_Energetique.html"/>
+  <updated>2010-12-29T11:10:23.003-05:00</updated>
+  <content>Le Camping Énergétique</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:D33AD45D-03E0-4E14-B129-876DDA5E1CDD</id>
+  <title>La Galerie d'Art</title>
+  <title xmlns="urn:iweb:">La Galerie d'Art</title>
+  <in-navbar xmlns="urn:iweb:">D33AD45D-03E0-4E14-B129-876DDA5E1CDD</in-navbar>
+  <link rel="alternate" href="La_Galerie_dArt.html"/>
+  <updated>2010-12-29T11:10:23.004-05:00</updated>
+  <content>La Galerie d'Art</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:B0490868-961C-43B6-870A-2659FAA92366</id>
+  <title>Les Artistes</title>
+  <title xmlns="urn:iweb:">Les Artistes</title>
+  <in-navbar xmlns="urn:iweb:">B0490868-961C-43B6-870A-2659FAA92366</in-navbar>
+  <link rel="alternate" href="Les_Artistes.html"/>
+  <updated>2010-12-29T11:10:23.005-05:00</updated>
+  <content>Les Artistes</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:2E3F5179-26CD-493B-B7FF-BC908720DC24</id>
+  <title>Événements</title>
+  <title xmlns="urn:iweb:">Événements</title>
+  <in-navbar xmlns="urn:iweb:">2E3F5179-26CD-493B-B7FF-BC908720DC24</in-navbar>
+  <link rel="alternate" href="Evenements.html"/>
+  <updated>2010-12-29T11:10:23.006-05:00</updated>
+  <content>Événements</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:A344E5CD-37B0-407D-A2B8-D6CC3DD08DE9</id>
+  <title>Lune Noire</title>
+  <title xmlns="urn:iweb:">Lune Noire</title>
+  <in-navbar xmlns="urn:iweb:">A344E5CD-37B0-407D-A2B8-D6CC3DD08DE9</in-navbar>
+  <link rel="alternate" href="Lune_Noire.html"/>
+  <updated>2010-12-29T11:10:23.007-05:00</updated>
+  <content>Lune Noire</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:565DBB2A-1CE9-405D-B5E7-CE9D6F1FB057</id>
+  <title>Party du Jour l’An 2011</title>
+  <title xmlns="urn:iweb:">Party du Jour l’An 2011</title>
+  <in-navbar xmlns="urn:iweb:">565DBB2A-1CE9-405D-B5E7-CE9D6F1FB057</in-navbar>
+  <link rel="alternate" href="Party_du_Jour_lAn_2011.html"/>
+  <updated>2010-12-29T11:10:23.008-05:00</updated>
+  <content>Party du Jour l’An 2011</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:5DE75E90-DAEA-41C0-B960-4469F8F408CB</id>
+  <title>Festival Sundari 2011</title>
+  <title xmlns="urn:iweb:">Festival Sundari 2011</title>
+  <in-navbar xmlns="urn:iweb:">5DE75E90-DAEA-41C0-B960-4469F8F408CB</in-navbar>
+  <link rel="alternate" href="Festival_Sundari_2011.html"/>
+  <updated>2010-12-29T11:10:23.009-05:00</updated>
+  <content>Festival Sundari 2011</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:035D4411-1CC9-42DB-94CD-B2EF7F1A70CF</id>
+  <title>Journal des membres</title>
+  <title xmlns="urn:iweb:">Journal des membres</title>
+  <in-navbar xmlns="urn:iweb:">035D4411-1CC9-42DB-94CD-B2EF7F1A70CF</in-navbar>
+  <link rel="alternate" href="Journal_des_membres/Journal_des_membres.html"/>
+  <updated>2007-03-01T12:29:51-05:00</updated>
+  <content>Journal des membres</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:9B151D7F-BEFF-45CF-98F0-1F228A707D71</id>
+  <title>Contacts</title>
+  <title xmlns="urn:iweb:">Contacts</title>
+  <in-navbar xmlns="urn:iweb:">9B151D7F-BEFF-45CF-98F0-1F228A707D71</in-navbar>
+  <link rel="alternate" href="Contacts.html"/>
+  <updated>2010-12-29T11:10:23.010-05:00</updated>
+  <content>Contacts</content>
+ </entry>
+</feed>
