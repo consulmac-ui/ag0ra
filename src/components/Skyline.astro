@@ -1,0 +1,89 @@
+---
+// Silhouette dessinée à la main : épinettes, la cabane du Cherry Island sur pilotis avec son hamac,
+// le Neverland (scène en bois rond, toile tendue entre les troncs), le tipi, le ruisseau, la lune.
+---
+<svg class="skyline" viewBox="0 0 1200 170" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="sk-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#f0c14b" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#f0c14b" stop-opacity="0"/>
+    </radialGradient>
+    <g id="sk-fir">
+      <path d="M0 0 L-14 30 L-6 28 L-20 60 L-9 57 L-26 92 L26 92 L9 57 L20 60 L6 28 L14 30 Z"/>
+      <path d="M0 92 V110" stroke-width="4"/>
+    </g>
+    <g id="sk-star"><path d="M0 -4 L1 -1 L4 0 L1 1 L0 4 L-1 1 L-4 0 L-1 -1 Z"/></g>
+  </defs>
+  <g class="sk-ink">
+    <!-- lune et étoiles -->
+    <path d="M1108 28 a20 20 0 1 0 14 34 a15 15 0 1 1 -14 -34z" class="sk-moon"/>
+    <use href="#sk-star" x="60" y="30" class="sk-starfill"/><use href="#sk-star" x="210" y="18" class="sk-starfill"/>
+    <use href="#sk-star" x="480" y="26" class="sk-starfill"/><use href="#sk-star" x="640" y="14" class="sk-starfill"/>
+    <use href="#sk-star" x="900" y="22" class="sk-starfill"/><use href="#sk-star" x="1010" y="48" class="sk-starfill"/>
+    <use href="#sk-star" x="1170" y="70" class="sk-starfill"/>
+    <!-- ruisseau -->
+    <path d="M0 152 C120 146 180 160 300 154 S520 144 640 152 S900 162 1040 152 S1160 146 1200 150" class="sk-water"/>
+    <path d="M0 161 C160 156 240 166 360 161 S640 154 760 161 S1040 168 1200 160" class="sk-water sk-water2"/>
+    <!-- épinettes (arrière) -->
+    <use href="#sk-fir" x="40" y="40" class="sk-fir"/><use href="#sk-fir" x="120" y="52" class="sk-fir"/>
+    <use href="#sk-fir" x="560" y="46" class="sk-fir"/><use href="#sk-fir" x="620" y="58" class="sk-fir"/>
+    <use href="#sk-fir" x="960" y="50" class="sk-fir"/><use href="#sk-fir" x="1150" y="44" class="sk-fir"/>
+    <!-- cabane du Cherry Island, sur pilotis -->
+    <g class="sk-cabin">
+      <path d="M262 140 V96 M290 140 V96 M318 140 V96" stroke-width="3"/>
+      <rect x="252" y="66" width="76" height="32" rx="2"/>
+      <path d="M246 66 L290 44 L334 66 Z"/>
+      <rect x="278" y="76" width="16" height="14" class="sk-window"/>
+      <circle cx="286" cy="83" r="22" fill="url(#sk-glow)" stroke="none"/>
+      <!-- échelle -->
+      <path d="M336 98 L352 140 M344 98 L360 140 M338 108 H346 M341 118 H350 M344 128 H354" stroke-width="2"/>
+    </g>
+    <!-- hamac entre deux épinettes -->
+    <use href="#sk-fir" x="200" y="60" class="sk-fir"/><use href="#sk-fir" x="420" y="56" class="sk-fir"/>
+    <path d="M214 112 C260 148 380 148 424 110" class="sk-rope"/>
+    <path d="M214 112 C264 142 376 142 424 110" class="sk-rope"/>
+    <!-- guirlande d'ampoules -->
+    <path d="M334 62 C400 84 470 84 540 60" class="sk-wire"/>
+    <circle cx="370" cy="72" r="2.6" class="sk-bulb"/><circle cx="410" cy="78" r="2.6" class="sk-bulb"/>
+    <circle cx="450" cy="79" r="2.6" class="sk-bulb"/><circle cx="490" cy="74" r="2.6" class="sk-bulb"/>
+    <!-- le Neverland : scène en bois rond, toile tendue entre les troncs, rampe -->
+    <g class="sk-stage">
+      <path d="M700 140 V40 M880 140 V36" stroke-width="5" class="sk-trunk"/>
+      <path d="M690 46 C740 78 840 78 890 42 L880 60 C840 92 740 92 700 62 Z" class="sk-tarp"/>
+      <path d="M672 112 H908" stroke-width="5"/>
+      <path d="M680 112 V140 M730 112 V140 M790 112 V140 M850 112 V140 M900 112 V140" stroke-width="3"/>
+      <path d="M672 100 H908" stroke-width="2"/>
+      <path d="M690 100 V112 M760 100 V112 M820 100 V112 M890 100 V112" stroke-width="2"/>
+      <path d="M908 112 L980 140" stroke-width="3"/>
+      <path d="M700 90 h180" class="sk-wire"/>
+      <circle cx="730" cy="90" r="2.4" class="sk-bulb sk-bulb-m"/><circle cx="790" cy="90" r="2.4" class="sk-bulb sk-bulb-t"/>
+      <circle cx="850" cy="90" r="2.4" class="sk-bulb sk-bulb-m"/>
+    </g>
+    <!-- tipi -->
+    <g class="sk-tipi">
+      <path d="M1020 140 L1060 56 L1100 140 Z"/>
+      <path d="M1050 46 L1060 62 L1070 46 M1044 50 L1060 62 M1076 50 L1060 62" stroke-width="2"/>
+      <path d="M1060 100 L1052 140 M1060 100 L1068 140" stroke-width="2"/>
+    </g>
+    <!-- sol -->
+    <path d="M0 140 H1200" stroke-width="2"/>
+  </g>
+</svg>
+<style is:global>
+  .skyline { display: block; width: 100%; height: 150px; background: linear-gradient(to bottom, transparent, rgba(0,0,0,.25)); }
+  .skyline .sk-ink path, .skyline .sk-ink rect, .skyline .sk-ink use { stroke: var(--ink-ornament); fill: var(--bg); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.2; }
+  .skyline .sk-fir { fill: #1a2416; stroke: var(--ink-ornament); }
+  .skyline .sk-starfill { fill: var(--sun); stroke: none; }
+  .skyline .sk-moon { fill: var(--sun); stroke: none; opacity: .9; }
+  .skyline .sk-water { fill: none; stroke: var(--sea); stroke-width: 2; opacity: .8; }
+  .skyline .sk-water2 { opacity: .35; }
+  .skyline .sk-window { fill: var(--sun); stroke: none; }
+  .skyline .sk-rope { fill: none; stroke: var(--sea); stroke-width: 2.2; }
+  .skyline .sk-wire { fill: none; stroke: var(--ink-ornament); stroke-width: 1.2; opacity: .7; }
+  .skyline .sk-bulb { fill: var(--sun); stroke: none; filter: drop-shadow(0 0 4px var(--sun)); }
+  .skyline .sk-bulb-m { fill: var(--magenta); filter: drop-shadow(0 0 4px var(--magenta)); }
+  .skyline .sk-bulb-t { fill: var(--sea); filter: drop-shadow(0 0 4px var(--sea)); }
+  .skyline .sk-tarp { fill: rgba(79,140,196,.35); stroke: var(--sea); }
+  .skyline .sk-trunk { stroke: var(--rope); }
+  @media (max-width: 640px) { .skyline { height: 120px; } }
+</style>

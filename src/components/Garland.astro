@@ -1,0 +1,26 @@
+---
+// La guirlande d'ampoules du Cherry Island, en motif répété sous l'en-tête.
+---
+<svg class="garland" viewBox="0 0 1200 56" preserveAspectRatio="xMidYMin slice" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="gl" width="240" height="56" patternUnits="userSpaceOnUse">
+      <path d="M0 6 Q120 46 240 6" fill="none" stroke="var(--ink-ornament)" stroke-width="1.3" opacity=".75"/>
+      <g stroke="var(--ink-ornament)" stroke-width="1.2" opacity=".8">
+        <path d="M60 21 v6 M120 26 v6 M180 21 v6"/>
+      </g>
+      <g class="gl-bulb">
+        <circle cx="60" cy="37" r="9" class="gl-halo gl-halo-s"/><ellipse cx="60" cy="34" rx="5" ry="7" class="gl-b gl-s"/>
+        <circle cx="120" cy="42" r="9" class="gl-halo gl-halo-m"/><ellipse cx="120" cy="39" rx="5" ry="7" class="gl-b gl-m"/>
+        <circle cx="180" cy="37" r="9" class="gl-halo gl-halo-t"/><ellipse cx="180" cy="34" rx="5" ry="7" class="gl-b gl-t"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="1200" height="56" fill="url(#gl)"/>
+</svg>
+<style is:global>
+  .garland { display: block; width: 100%; height: 44px; margin-top: -6px; pointer-events: none; }
+  .garland .gl-b { stroke: rgba(0,0,0,.35); stroke-width: .8; }
+  .garland .gl-s { fill: var(--sun); } .garland .gl-m { fill: var(--magenta); } .garland .gl-t { fill: var(--sea); }
+  .garland .gl-halo { opacity: .22; }
+  .garland .gl-halo-s { fill: var(--sun); } .garland .gl-halo-m { fill: var(--magenta); } .garland .gl-halo-t { fill: var(--sea); }
+</style>

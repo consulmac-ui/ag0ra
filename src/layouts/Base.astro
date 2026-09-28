@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Garland from '../components/Garland.astro';
+import Skyline from '../components/Skyline.astro';
 const { title, description = "L'AgorA de Saint-Fortunat (2010–2014) : un sanctuaire en forêt bâti à la main par des créateurs hors norme. Cabanes dans les arbres, scènes en forêt, festivals, permaculture. L'archive.", current = '', image = '/img/227-cherry-island.jpg' } = Astro.props;
 const nav = [
   ['/', 'Accueil'],
@@ -29,6 +31,9 @@ const fullTitle = title ? `${title} · L'AgorA` : "L'AgorA — Saint-Fortunat, 2
     <meta property="og:image" content={image} />
     <meta property="og:type" content="website" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
   </head>
   <body>
     <a class="skip" href="#contenu">Aller au contenu</a>
@@ -36,7 +41,7 @@ const fullTitle = title ? `${title} · L'AgorA` : "L'AgorA — Saint-Fortunat, 2
       <div class="site-inner">
         <a class="brand" href="/">
           <img src="/img/026-tree-door.jpg" alt="" width="46" height="46" />
-          <span><strong>L'AgorA</strong><small>Saint-Fortunat · 2010–2014</small></span>
+          <span><strong>L'AgorA</strong><small>Saint-Fortunat · 2010–2014 · camping techno-bohème</small></span>
         </a>
         <nav class="main" aria-label="Principale">
           {nav.map(([href, label]) => (
@@ -44,12 +49,15 @@ const fullTitle = title ? `${title} · L'AgorA` : "L'AgorA — Saint-Fortunat, 2
           ))}
         </nav>
       </div>
+      <Garland />
     </header>
     <main id="contenu">
       <slot />
     </main>
     <footer class="site">
+      <Skyline />
       <div class="site-inner">
+        <p class="footer-motto">Des pirates, des lutins, des elfes. De l'électro et du trad acoustique. De l'artisanat et de la terre. Le Cherry Island pour le yin, le Neverland pour le yang.</p>
         <p>L'AgorA, 81 route 263, Saint-Fortunat (Chaudière-Appalaches, Québec), 2010–2014. Anciennement Le Donjon, grandeur nature. Site-archive assemblé en 2026 par Christian Brochu, cofondateur, à partir des archives du collectif : les sites ag0ra.org et ledonjon.ca, la page Facebook de L'AgorA, les brochures, les photos et les vidéos conservées.</p>
         <p>Les textes d'époque sont reproduits tels quels, avec leur orthographe et leur enthousiasme. Les personnes citées le sont par leur prénom ou leur nom d'artiste, tels qu'ils apparaissaient publiquement à l'époque. Photos : membres et amis de L'AgorA, 2009–2014, sauf mention.</p>
         <p>Voir aussi <a href="https://guindonville.pages.dev">Guindonville (Val-David, 2003)</a>, l'autre combat, et <a href="https://consulmac.com">consulmac.com</a>.</p>

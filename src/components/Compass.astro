@@ -1,0 +1,29 @@
+---
+// Rose des vents dessinée à la main. Le nord pointe vers « Nulle part », comme sur le plan de 2013.
+const { class: cls = '' } = Astro.props;
+---
+<svg class={`compass ${cls}`} viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+  <g class="cp-ink">
+    <circle cx="60" cy="60" r="52" class="cp-ring"/>
+    <circle cx="60" cy="60" r="44" class="cp-ring cp-ring2"/>
+    <path d="M60 12 L66 54 L60 60 L54 54 Z" class="cp-n"/>
+    <path d="M60 108 L54 66 L60 60 L66 66 Z"/>
+    <path d="M12 60 L54 54 L60 60 L54 66 Z"/>
+    <path d="M108 60 L66 66 L60 60 L66 54 Z"/>
+    <path d="M27 27 L57 55 L60 60 L55 57 Z M93 27 L63 55 L60 60 L65 57 Z M27 93 L57 65 L60 60 L55 63 Z M93 93 L63 65 L60 60 L65 63 Z" class="cp-small"/>
+    <circle cx="60" cy="60" r="4" class="cp-dot"/>
+    <text x="60" y="9" text-anchor="middle" class="cp-txt">nulle part</text>
+    <text x="60" y="119" text-anchor="middle" class="cp-txt">st-fortunat</text>
+    <text x="4" y="63" class="cp-txt">O</text>
+    <text x="110" y="63" class="cp-txt">E</text>
+  </g>
+</svg>
+<style is:global>
+  .compass { width: 110px; height: 110px; }
+  .compass .cp-ink path, .compass .cp-ink circle { stroke: var(--ink-ornament); fill: var(--bg-2); stroke-width: 1.6; stroke-linejoin: round; }
+  .compass .cp-ring { fill: none; opacity: .9; } .compass .cp-ring2 { stroke-dasharray: 2 4; opacity: .7; }
+  .compass .cp-n { fill: var(--sun); }
+  .compass .cp-small { fill: var(--rope); opacity: .8; }
+  .compass .cp-dot { fill: var(--sun); }
+  .compass .cp-txt { font: 700 9px 'Amatic SC', system-ui, sans-serif; letter-spacing: .06em; fill: var(--ink-ornament); stroke: none; }
+</style>
