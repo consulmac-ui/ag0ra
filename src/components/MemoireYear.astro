@@ -25,7 +25,7 @@ const fmt = (p) => {
         {c.photos.map((p) => (
           <a class="mem-ph" href={`/memoire/f/${p.f}`} target="_blank" rel="noopener">
             <img src={`/memoire/t/${p.f}`} alt={`${fr ? c.fr : c.en}, ${fmt(p)}`} loading="lazy" decoding="async" />
-            <span>{fmt(p)}</span>
+            <span>{p.c ? <>{fr ? p.c : p.ce}<br /></> : null}{fmt(p)}</span>
           </a>
         ))}
       </div>
