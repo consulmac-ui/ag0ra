@@ -1,0 +1,52 @@
+---
+import data from '../data/memoire.json';
+const { year, lang = 'fr' } = Astro.props;
+const fr = lang === 'fr';
+const chapters = data.filter((c) => c.year === year);
+const MO_EN = ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+const fmt = (p) => {
+  if (fr) return p.d;
+  const [y, m, d] = p.iso.split('-');
+  return `${MO_EN[+m - 1]} ${+d}, ${y}`;
+};
+---
+<nav class="mem-toc" aria-label={fr ? 'Chapitres' : 'Chapters'}>
+  {chapters.map((c) => <a href={`#${c.id}`}>{fr ? c.fr : c.en}</a>)}
+</nav>
+{chapters.map((c) => (
+  <section class="mem-ch" id={c.id}>
+    <h2>{fr ? c.fr : c.en}</h2>
+    <p class="mem-text">{fr ? c.tfr : c.ten}</p>
+    {c.ev && (
+      <p class="mem-ev"><a href={`https://www.facebook.com/events/${c.ev}/`} rel="noopener">{fr ? "L'événement d'origine sur Facebook" : 'The original Facebook event'}</a></p>
+    )}
+    {c.photos.length > 0 && (
+      <div class="mem-grid">
+        {c.photos.map((p) => (
+          <a class="mem-ph" href={`/memoire/f/${p.f}`} target="_blank" rel="noopener">
+            <img src={`/memoire/t/${p.f}`} alt={`${fr ? c.fr : c.en}, ${fmt(p)}`} loading="lazy" decoding="async" />
+            <span>{fmt(p)}</span>
+          </a>
+        ))}
+      </div>
+    )}
+  </section>
+))}
+<style is:global>
+  .mem-toc { display: flex; flex-wrap: wrap; gap: .4rem .6rem; margin: 1rem 0 2rem; }
+  .mem-toc a { font-family: var(--hand); font-weight: 700; font-size: 1.15rem; border: 1px dashed var(--rope); border-radius: 999px; padding: .1rem .75rem; color: var(--parchment); text-decoration: none; }
+  .mem-toc a:hover { color: var(--sun); border-color: var(--sun); }
+  .mem-ch { margin: 3rem 0 1rem; scroll-margin-top: 1rem; }
+  .mem-ch h2 { font-family: var(--display); font-weight: 400; font-size: clamp(1.5rem, 3vw, 2rem); color: var(--sun); margin: 0 0 .6rem; }
+  .mem-text { max-width: var(--measure); line-height: 1.7; }
+  .mem-ev { font-size: .95rem; margin-top: -.4rem; }
+  .mem-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: .6rem; margin-top: 1rem; }
+  .mem-ph { display: block; position: relative; border: 1px dashed var(--rope); border-radius: 6px; overflow: hidden; background: #0c0b0a; aspect-ratio: 4 / 3; }
+  .mem-ph img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
+  .mem-ph:hover img { transform: scale(1.04); }
+  .mem-ph span { position: absolute; left: 0; right: 0; bottom: 0; padding: .9rem .5rem .3rem; font-family: var(--script); font-size: 1rem; color: var(--parchment); background: linear-gradient(transparent, rgba(0,0,0,.75)); }
+  .mem-years { display: flex; flex-wrap: wrap; gap: .8rem; margin: 1.5rem 0 2.5rem; }
+  .mem-years a { font-family: var(--display); font-size: 1.6rem; padding: .3rem 1.1rem; border: 1px dashed var(--sea); border-radius: 10px; color: var(--sea); text-decoration: none; }
+  .mem-years a[aria-current] { color: var(--sun); border-color: var(--sun); }
+  @media (prefers-reduced-motion: reduce) { .mem-ph img { transition: none; } }
+</style>

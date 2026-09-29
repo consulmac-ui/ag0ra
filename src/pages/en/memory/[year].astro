@@ -1,0 +1,23 @@
+---
+import Base from '../../../layouts/Base.astro';
+import MemoireYear from '../../../components/MemoireYear.astro';
+import data from '../../../data/memoire.json';
+export function getStaticPaths() {
+  return [2010, 2011, 2012, 2013, 2014].map((y) => ({ params: { year: String(y) } }));
+}
+const year = +Astro.params.year;
+const n = data.filter((c) => c.year === year).reduce((a, c) => a + c.photos.length, 0);
+const years = [2010, 2011, 2012, 2013, 2014];
+---
+<Base title={`The memory, ${year}`} current={`/en/memory/${year}/`} lang="en" alt={`/memoire/${year}/`} description={`L'AgorA in ${year}, chapter by chapter: ${n} dated photos from the page, and the words of the time.`}>
+  <p class="eyebrow"><a href="/en/memory/">The memory</a></p>
+  <h1>{year}</h1>
+  <p class="lede">{n} photos from the album "L'Ag0rA de A @ Z", in the order they were taken, with the words of the time (translated from French). Click a photo to open it full size.</p>
+  <nav class="mem-years" aria-label="Years">
+    {years.map((y) => <a href={`/en/memory/${y}/`} aria-current={y === year ? 'page' : undefined}>{y}</a>)}
+  </nav>
+  <MemoireYear year={year} lang="en" />
+  <nav class="mem-years" aria-label="Years">
+    {years.map((y) => <a href={`/en/memory/${y}/`} aria-current={y === year ? 'page' : undefined}>{y}</a>)}
+  </nav>
+</Base>
