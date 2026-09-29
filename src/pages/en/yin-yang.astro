@@ -1,0 +1,119 @@
+---
+import Base from '../../layouts/Base.astro';
+const yin = [
+  ['300-the-island-b4-the-creation.jpg', "July 2010: \"The Island b4 the creation\", the island before anything."],
+  ['398-img-0408.jpg', "July 4, 2010: the first hammock over the pond, an electrical box on a tree."],
+  ['336-1173631-10152193853423438-1148504371-n.jpg', "2011: the cabin and the green hammock. Photo by Renaud Kasma, the one that \"set the tone and the vibe\"."],
+  ['226-cherry-island-yes.jpg', "\"Cherry Island, yes!\": at the decks on the island. Photo Renaud Kasma, 2011."],
+  ['453-img-0702.jpg', "July 2, 2011: the lights of the island, at night."],
+  ['227-cherry-island.jpg', "The Cherry Island at night: tents, string lights, reflections."],
+  ['503-img-0670.jpg', "The log walkway to the island."],
+  ['571-cuisine-d-ete-et-cherry-island-in-back.jpg', "June 24, 2012: the summer kitchen lit in blue, the island behind."],
+  ['574-297922-10150467142868438-829448437-11106.jpg', "2012: the cabin decorated for Earthdance, with its ladder.", 'tall'],
+  ['280-photo-chery-amandine-hiver.jpg', "The island in winter, the stream still open."],
+  ['299-the-cherry-island-wedding.jpg', "\"The Cherry Island Wedding\": a wedding on the island, tipi and tents."],
+  ['009-agora-earthdance-cherry.jpg', "Earthdance 2013: on the grass of the Cherry Island."],
+];
+const yang = [
+  ['002-img-2417.jpg', "July 8, 2012: a stage frame in the trees, a year before the Neverland."],
+  ['350-neverland-en-construction.jpg', "August 2013: the Neverland under construction, at night, under the floodlights."],
+  ['354-stage-update.jpg', "September 10, 2013: \"The Neverland done!!\" Round logs, blue tarp, decks hung in the trees."],
+  ['346-neverland-surround.jpg', "Panorama of the Neverland among the spruces.", 'wide'],
+  ['010-earthdance-neverland.jpg', "Earthdance 2013: the Neverland in the middle of the night."],
+  ['011-earthdance-epic-s-painting.jpg', "Earthdance 2013: the stage as seen by Epic, in paint."],
+];
+const entre = [
+  ['013-1115924-574389092600219-1707538609-o.jpg', "The 2013 plan, drawn by Antoine: the stream, the island, the stages, the treehouses, the tipi. \"Nulle part\" (nowhere) at the top, \"St-Fortunat\" at the bottom.", 'doc'],
+  ['345-l-ascension.jpg', "L'Ascension, a treehouse \"with a breathtaking view of the tipi, the stream and the Cherry Island\", 2013.", 'tall'],
+  ['360-vue-du-teepee-au-cherry.jpg', "The view from the tipi towards the Cherry Island.", 'tall'],
+];
+---
+<Base title="Yin and Yang" current="/en/yin-yang/" lang="en" alt="/yin-yang/" description="The Cherry Island and the Neverland: L'AgorA's little island and big stage, the yin and the yang, in photos and in the words of the time.">
+  <p class="eyebrow">Yin and Yang</p>
+  <h1>The Cherry Island and the Neverland</h1>
+  <p class="lede">A little island to settle down on, a big stage to dance on. One at the water's edge, under the string lights; the other in round logs, between the trunks of the spruces. Christian calls them the yin and the yang of L'AgorA. In between: the stream, the tipi, the treehouses, the summer kitchen.</p>
+
+  <svg class="yy-big" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+    <circle cx="60" cy="60" r="56" class="yy-t"/>
+    <path d="M60 4a56 56 0 0 1 0 112a28 28 0 0 1 0-56a28 28 0 0 0 0-56z" class="yy-s"/>
+    <circle cx="60" cy="32" r="9" class="yy-t"/><circle cx="60" cy="88" r="9" class="yy-s"/>
+    <circle cx="60" cy="60" r="56" class="yy-ring"/>
+  </svg>
+
+  <div class="duel">
+    <section class="side yin">
+      <p class="side-label">Yin</p>
+      <h2>The Cherry Island, the island of cherries</h2>
+      <img class="lead" src="/img/491-img-0577.jpg" alt="The Cherry Island: the cabin at the water's edge and its hammock over the stream, 2011." loading="lazy" />
+      <div class="prose">
+        <p>A little island in the stream, at the foot of the camp, at the end of a log walkway. In July 2010, it is still "the island before the creation": grass, trees, a pond. On July 4, a first hammock swings over the water. In 2011, the cabin on stilts rises at the water's edge, the DJ booth settles on the island, and Renaud Kasma takes the photo of the green hammock that "set the tone and the vibe" of L'AgorA. In June 2012, the summer kitchen lights up in blue in front of the island; "the fire and gathering space of the Cherry Island" becomes the heart of the site.</p>
+        <p>A "small Saturday afternoon on the Cherry Island", in September 2013: "laughter and tranquility". In 2014, "Cherry Island waterworld", a wedding on the island, the Saint-Jean of "the tribe", the restaurant at the summer kitchen during Tatanka. And at the end of August 2014, a voltage problem on the Cherry Island's line: "free tickets for small electrician services please!!"</p>
+        <blockquote><p>The Cherry had a gravity-fed waterfall, with a 4-inch pipe feeding the pool, and the sound of the falling water calmed everything, all the time. The sound carried to the camps around, even to the cabins on the other side of the stream. The DJs who played chill, techno or reggae, were forced to play with the white noise of the falls, and it brought dimensions never experienced before, given how unique the spot was in Quebec.</p><cite>Christian, 2026</cite></blockquote>
+        <blockquote><p>All of it was built with material found in nature, hay bales even, and donated materials that we recycled creatively to create an atmosphere beyond compare.</p><cite>Christian, 2026</cite></blockquote>
+        <blockquote><p>"I'm sitting on the little island right there<br />between 6 speakers<br />in the company of friends and spirits of consciousness<br />I'm not searching!<br />I owe it to myself to be neutral and in love<br />like the sun"</p><cite>Christian, on the Cherry Island, July 2012 — <a href="/en/voices/">the whole text</a></cite></blockquote>
+      </div>
+      <div class="gallery">
+        {yin.map(([file, caption, cls]) => (
+          <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+        ))}
+      </div>
+    </section>
+
+    <section class="side yang">
+      <p class="side-label">Yang</p>
+      <h2>The Neverland, the round-log stage</h2>
+      <img class="lead" src="/img/354-stage-update.jpg" alt="The Neverland, September 2013: round-log stage, blue tarp, decks hung in the trees." loading="lazy" />
+      <div class="prose">
+        <p>The name came before the stage. In June 2013, the page describes L'AgorA as a whole as "a life-size Neverland centred on the creative and the imaginary, with a touch of technology for genius". The August 2012 plan already announced it: "a stage, a forest… the dance floor cleared of trees among the trees, a natural amphitheatre, three treehouses around the dance floor connected by walkways, and this, permanently".</p>
+        <p>In August 2013, the worksite of the "next level dancefloor": the future dance floor is purified with sage. On September 2, "Neverland stage almost done"; on the 10th, "The Neverland done!!": "our new logwood stage with special decks for dancers". Earthdance 2013 plays on it ten days later, on the theme of community. In spring 2014: "come and dance on one of the ramps of the Neverland stage, live a magical moment in the trees", and "the Neverland stage and dancefloor can be covered so that a 100 people can dance and still stay dry". Sam FloydianSound is "on the sound of the Neverland". The last festival, Earthdance 2014, unrolls its line-up on it from Friday evening to Sunday evening.</p>
+        <blockquote><p>"The decks of the Neverland withstood the ardour of the elves, who no longer knew they were still on earth, in the world of Peter Pan!!"</p><cite>L'AgorA's page, after Tatanka, June 10, 2014</cite></blockquote>
+        <blockquote><p>"The time the Neverland stage of L'Ag0rA started vibrating full size."</p><cite>L'AgorA's page, 2022, sharing a clip</cite></blockquote>
+        <details>
+          <summary>The Earthdance 2014 line-up "for the Neverland"</summary>
+          <p><strong>Friday, September 19</strong> — 7 pm Snowphish &amp; LockOut (Montreal); 8 pm Robert Fusil et les Chiens Fous, live (Montreal); 9:15 pm Sweet Grass, live (Chicoutimi); 10:45 pm Ol' Savannah, live (Montreal); 12:15 am Gras Trance, live (Alma); 1:45 am Jeremy's Aura, live (Montreal); 3:15 am Spo-Onani (Quebec City); 4:45 am XSTNZ (Sherbrooke); 6:15 am break.</p>
+          <p><strong>Saturday, September 20</strong> — 9 am traditional Indian music, live: "sarod / dawn / tablas / dew / violin / freshness / shruti box"; 10:30 am afrobeat by Jeunesse Cosmique (Montreal); 12:30 pm "open jam session!!! (The Whole World)"; 2:30 pm Prana Papa (Quebec City); 4 pm Kalabrese (Sherbrooke); 5:30 pm DJ Nikoli (Ottawa); 7 pm prayer for peace; 7:15 pm Black Bear (awaiting confirmation); 8 pm Jam Boulevard, live (Prévost); 9:30 pm Faudrait faire la vaisselle, live (Almos); 11 pm Golden Python, live (Montreal); 12:15 am A Devil's Din, live (Montreal); 1:45 am La Poësse, live (La Baie); 3:15 am Nuclear Ramjet (Montreal and Paspébiac); 4:45 am Seven Ways (Quebec City); 6:15 am break.</p>
+          <p><strong>Sunday, September 21</strong> — 9 am Snowphish &amp; LockOut; 10:30 am Nuclear Ramjet; 12 pm Mat THC (Montreal); 1:30 pm DJ Rikam (Montreal), three hours; 4:30 pm Frankenductor (Almonte, Ontario); 6 pm Bagg Mahn &amp; Decipher Deception (Ottawa and Niagara Falls); 7:30 pm Prana Papa; 8:30 pm "closing of the Earthdance Festival 5th Edition, 2014. An enormous THANK YOU for your participation!!"</p>
+        </details>
+      </div>
+      <div class="gallery">
+        {yang.map(([file, caption, cls]) => (
+          <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+        ))}
+      </div>
+    </section>
+  </div>
+
+  <h2 class="eyebrow" style="margin-top:2.5rem">In between</h2>
+  <div class="prose">
+    <p>The stream, with its log walkways; the 25-foot mandala tipi, on two floors; the treehouses, l'Ascension and la Riveraine, "with a breathtaking view of the tipi, the stream and the Cherry Island"; the summer kitchen; the yurt; the barn and its hammocks. And two sound systems, "access to both sound systems", included in the price of camping.</p>
+  </div>
+  <div class="gallery">
+    {entre.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <div class="prose">
+    <blockquote><p>Even the police officers who came following complaints changed their minds about the place and its atmosphere, and they even thought of bringing their children, they were so inspired too.</p><cite>Christian, 2026</cite></blockquote>
+  </div>
+</Base>
+
+<style is:global>
+  .yy-big { display: block; width: 96px; height: 96px; margin: 0 auto 1.6rem; filter: drop-shadow(0 2px 8px rgba(0,0,0,.5)); }
+  .yy-big .yy-t { fill: var(--sea); } .yy-big .yy-s { fill: var(--sun); }
+  .yy-big .yy-ring { fill: none; stroke: var(--ink-ornament); stroke-width: 1.5; stroke-dasharray: 3 5; }
+  .duel { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  @media (min-width: 960px) { .duel { grid-template-columns: 1fr 1fr; gap: 2.2rem; } }
+  .side { border: 2px dashed rgba(167,130,79,.45); border-radius: 14px; padding: 1.2rem 1.2rem 1.4rem; background: var(--card); }
+  .side.yin { --tone: var(--sea); box-shadow: inset 0 0 0 1px rgba(111,199,184,.15); }
+  .side.yang { --tone: var(--sun); box-shadow: inset 0 0 0 1px rgba(240,193,75,.15); }
+  .side-label { font-family: var(--hand); font-weight: 700; font-size: 2.2rem; letter-spacing: .2em; color: var(--tone); margin: 0; line-height: 1; }
+  .side h2 { font-family: var(--display); font-weight: normal; font-size: 1.7rem; line-height: 1.2; color: var(--tone); margin: .2rem 0 1rem; }
+  .side .lead { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; border: 2px dashed rgba(167,130,79,.45); padding: 4px; background: #000; margin-bottom: 1rem; }
+  .side .prose h2 { color: var(--tone); }
+  .side .prose blockquote { border-left-color: var(--tone); }
+  .side .prose blockquote::before { color: var(--tone); }
+  .side .gallery { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); margin: 1.2rem 0 0; }
+  .side .prose details summary { color: var(--tone); }
+  .side .prose { max-width: none; }
+</style>

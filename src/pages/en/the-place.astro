@@ -1,0 +1,136 @@
+---
+import Base from '../../layouts/Base.astro';
+const plans = [
+  ['013-1115924-574389092600219-1707538609-o.jpg', "The plan of L'AgorA drawn in 2013: the house and the bunker near the road, the stream, the Cherry Island, the stages, the treehouses, the trail to the lookout tower.", 'doc'],
+  ['610-plan-agora-festival.jpg', "The festival plan (June 2013): parking, camping, stages, kitchen, island.", 'doc'],
+];
+const lieux = [
+  ['386-img-0446.jpg', "May 30, 2010: the moving truck in front of the red-roofed house, 81 route 263."],
+  ['390-img-0149.jpg', "The house, June 2010."],
+  ['391-img-0154.jpg', "The barn in the flowering field, June 2010."],
+  ['481-img-0348.jpg', "The bunker under the snow, with its garage doors, winter 2011."],
+  ['483-img-0457.jpg', "The bunker's kitchen and lodges, red walls, May 2011."],
+  ['558-img-1457.jpg', "A bunker lodge turned into a bedroom, red fabrics, November 2011."],
+  ['584-320046-10150564960528438-829448437-11655.jpg', "The bunker's big hall, hung with fabric, with its garden chairs, 2012."],
+  ['046-page7.jpg', "The bunker's common room, January 2013: wooden floor, tables, stove."],
+  ['455-img-0738.jpg', "July 2011: the hand-painted sign in front of the house's porch. \"Camping: enchanting site, lake, river, trails, electricity, running water.\""],
+  ['462-img-0998.jpg', "The red-roofed welcome cabin, at the entrance of the site, August 2011."],
+  ['463-img-0999.jpg', "The entrance road, with the welcome sign."],
+];
+const foret = [
+  ['491-img-0577.jpg', "The Cherry Island: the cabin at the water's edge and its hammock over the stream, 2011."],
+  ['492-img-0579.jpg', "The Cherry Island seen from the other bank."],
+  ['571-cuisine-d-ete-et-cherry-island-in-back.jpg', "The summer kitchen, with the Cherry Island behind, June 2012."],
+  ['221-amandine-cuisineext-tatanka.jpg', "The outdoor kitchen during Tatanka."],
+  ['280-photo-chery-amandine-hiver.jpg', "The Cherry Island in winter."],
+  ['490-img-0561.jpg', "The log bridge over the stream."],
+  ['532-img-1022.jpg', "A round-log walkway between the spruces."],
+  ['503-img-0670.jpg', "The log walkway through the tall grass."],
+  ['393-img-0164.jpg', "The first little bridge, June 2010."],
+  ['500-img-0646.jpg', "The stream's waterfall."],
+  ['501-img-0667.jpg', "The field of wildflowers and the valley."],
+  ['486-img-0537.jpg', "The spruce plantation, in rows."],
+];
+const cabanes = [
+  ['345-l-ascension.jpg', "L'Ascension, a treehouse \"with a breathtaking view of the tipi, the stream and the Cherry Island\", 2013.", 'tall'],
+  ['356-la-riverain.jpg', "La Riveraine, above the stream."],
+  ['020-la-riveraine-treehouse.jpg', "La Riveraine at night, lit from inside.", 'tall'],
+  ['343-le-cubehouse.jpg', "The CubeHouse, on stilts in the forest.", 'tall'],
+  ['003-img-2424.jpg', "A green-roofed platform, between the trunks, July 2012."],
+  ['004-img-2425.jpg', "The tipi and the yurt in the clearing, July 2012.", 'tall'],
+  ['005-img-2448.jpg', "The cabin with the yellow flags, on the trail.", 'tall'],
+  ['448-img-0562.jpg', "One of the first platforms, June 2011."],
+  ['566-img-2276.jpg', "The frame of the mandala tipi, 25 feet, two floors, June 2012.", 'tall'],
+  ['359-teepee-et-girls.jpg', "The finished tipi, with its wooden skin, 2013.", 'tall'],
+  ['339-dans-le-teepee.jpg', "Inside the tipi, in red light."],
+  ['361-yourte1.jpg', "The yurt, at the end of the spruce alley.", 'tall'],
+  ['168-335453-10150457295163438-829448437-11047.jpg', "The yurt and its watchdog."],
+  ['567-img-2280.jpg', "Inside the yurt, a chair and a lamp."],
+  ['550-img-1441.jpg', "The yurt in November 2011."],
+  ['543-l-agora-bouddha.jpg', "L'AgorA's Buddha under its tripod, in the grass."],
+];
+const scenes = [
+  ['354-stage-update.jpg', "The Neverland, September 2013: round-log stage, blue tarp, decks hung in the trees."],
+  ['350-neverland-en-construction.jpg', "The Neverland under construction, at night, under the floodlights."],
+  ['346-neverland-surround.jpg', "Panorama of the Neverland among the spruces.", 'wide'],
+  ['010-earthdance-neverland.jpg', "The Neverland stage during Earthdance 2013."],
+  ['487-img-0538.jpg', "The round-log frame of the covered stage, 2011."],
+  ['488-img-0540.jpg', "The covered stage under construction: ladder, tarp, string lights."],
+  ['502-img-0668.jpg', "The finished forest stage, with its canvas and its fabric skirt."],
+  ['446-img-0558.jpg', "The geodesic dome and its speakers, June 2011."],
+  ['409-img-0690.jpg', "The very first stage, at the edge of the pond, August 15, 2010."],
+  ['454-img-0732.jpg', "The DJ booth in the forest, July 2011."],
+  ['438-img-0535.jpg', "The speaker columns in the bunker's doorway, June 2011.", 'tall'],
+  ['589-382967-10150621849818438-829448437-11830.jpg', "The studio, with its monitors and its screen, 2012.", 'tall'],
+  ['451-img-0647.jpg', "L'AgorA's office: two laptops, a window onto the trees, Wi-Fi everywhere, 2011."],
+  ['383-tour-observatoire.jpg', "Saint-Fortunat's lookout tower, at the top of the mountain, at the end of the trail."],
+  ['073-487405-10152149019935154-838655942-n.jpg', "The view from the mountain over the valley, in the fall."],
+];
+---
+<Base title="The place" current="/en/the-place/" lang="en" alt="/le-lieu/">
+  <p class="eyebrow">The place</p>
+  <h1>81, route 263</h1>
+  <p class="lede">A 104-acre land in Saint-Fortunat, in the Appalachians, "2 h 15 from Montreal, 1 h 15 from Quebec City". What was there, and what the Agorians built on it.</p>
+
+  <div class="prose">
+    <p>According to the ad the collective posted in 2014: "on the Agora's land there's a small river, a good stream, a small lake, an insulated building 180 feet by 40, a barn and stable, a house, a regional hiking trail, four spruce plantations due to be cut into boards for building, 2,500 maples ready for a sugar bush, a mountain and summit, and the land is 104 acres". The 180 feet of the ad is the part of the building that was heated in winter; in all, it was 300 feet long.</p>
+    <p>And, from the 2012 description: "The Agora's main building comprises lodges, bedrooms, a kitchen, showers and a big common room with a stage, all heated with wood for perfect comfort during the winter season. On our land there are four treehouses, two stages in the forest, the Cherry Island, the barn and a yurt, all equipped with electricity and wireless internet access. It is also possible to walk a magnificent hiking trail that leads to St-Fortunat's lookout tower at the top of the mountain."</p>
+    <blockquote><p>A 180-foot section was heated in winter with the wood we cut in the forest, in the one big wood stove we had. Despite the minus 20 outside, and even after a week without heating, the concrete on the floor kept warming the place, it held the heat so well. Everything was watched very, very closely to make sure of everyone's safety, and of the children who came to marvel at the place. Given the Peter Pan atmosphere, the place was lit up by pirates who came to tell us their life stories.</p><cite>Christian, 2026</cite></blockquote>
+  </div>
+
+  <div class="facts">
+    <div class="fact"><strong>The bunker</strong><span>the former pig barn, 300 × 40 feet: lodges, bedrooms, kitchen, showers, big hall with a stage, wood stove</span></div>
+    <div class="fact"><strong>The Cherry Island</strong><span>the island of cherries, in the middle of the stream: cabin, summer kitchen, fire, beach, hammock</span></div>
+    <div class="fact"><strong>The Neverland</strong><span>the round-log stage of 2013, with its decks in the trees and its walkways</span></div>
+    <div class="fact"><strong>5 treehouses</strong><span>l'Ascension, la Riveraine, the CubeHouse and the others, with electricity and Wi-Fi</span></div>
+    <div class="fact"><strong>The mandala tipi</strong><span>25 feet, two floors, "for your acrobatics"</span></div>
+    <div class="fact"><strong>The yurt</strong><span>sleeps eight, electricity and Wi-Fi, at the end of the spruce alley</span></div>
+    <div class="fact"><strong>The barn</strong><span>twenty hammocks, "warmer and drier than outside"</span></div>
+    <div class="fact"><strong>The lookout</strong><span>the tower at the top of the mountain, at the end of the regional hiking trail</span></div>
+  </div>
+
+  <div class="prose">
+    <h2>L'AgorA's campground, in 2012</h2>
+    <p>"Please note that all accommodations have electrical outlets, lights and Wi-Fi. A yurt for rent at $100 for the three nights of the weekend, which can sleep 8, with electricity and Wi-Fi. Two treehouses for rent at $60 each, which can sleep 4, with a hay bed to keep warm (efficient, and generates heat in all seasons). The barn, which can hold 20 hammocks and is warmer and drier than outside, can house 25 people with beds or air mattresses. The Agora itself has 5 lodges for rent at $75 which can house 4 each, next to the wood stove." Camping, $10 a night per person, "including access to both sound systems".</p>
+    <h2>The plans</h2>
+  </div>
+  <div class="gallery">
+    {plans.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <h2 class="eyebrow">The house, the bunker, the entrance</h2>
+  <div class="gallery">
+    {lieux.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <h2 class="eyebrow">The stream, the island, the bridges</h2>
+  <div class="gallery">
+    {foret.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <h2 class="eyebrow">The treehouses, the tipi, the yurt</h2>
+  <div class="gallery">
+    {cabanes.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <h2 class="eyebrow">The stages, the sound, the office, the mountain</h2>
+  <div class="gallery">
+    {scenes.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <div class="prose">
+    <h2>The work</h2>
+    <p>"Our installations and constructions are made mostly of recycled materials, love and devotion!" wrote the collective. The figures, for their part, are those of the Facebook page: three years of work in June 2013; "36 months and more than 4,000 hours of work" in May 2013, and some 14,000 hours of work in all, by Christian's count; four years of existence on June 9, 2014, "what evolution, what lessons and what work during these crazy years". The clearing of the bunker, the lodges, the walkways, the stages, the treehouses, the tipi, the electricity and the network deep into the forest: all of it was done by hand, by four to six people depending on the season, and by the friends who came "to drop by".</p>
+    <blockquote><p>"It may seem impossible to the intellectuals, but it only takes four motivated people and two days of work. An excellent challenge and a lesson in living in nature."</p><cite>Call to build a permanent stage in the trees, September 2012</cite></blockquote>
+  </div>
+</Base>

@@ -1,0 +1,120 @@
+---
+import Base from '../../layouts/Base.astro';
+// [date, text]
+const years = [
+  ['Before', [
+    ['2002', "First Lune Noire nights in a loft in Old Montreal: every month, around the new moon, artist and musician friends meet to jam and dance."],
+    ['September 15, 2007', "An Earthdance, \"Give peace a dance\", in Saint-Fortunat, well before the Donjon's arrival; another follows on September 13, 2008. The posters survive."],
+    ['2009', "The Donjon of the 5505, in Montreal: private club, red drapes, hammocks, turntables and Lune Noire. On September 18, 2009, LutinDesBois, from Paris, plays there for the first time in Quebec."],
+    ['January–April 2010', "The Donjon's programme calendar lines up parties, painting workshops, Lune Noire and launches: DJ Zen's CD Earth on March 12, a Full Moon Party on February 26, the intimate evening with the founder of Suns of Arqa in April. On April 17, \"Dark Side of Peace\" at \"the old Donjon\", from 10 pm to 8 am."],
+    ['March 7, 2010', "First trace of ledonjon.ca in the Wayback Machine: a single page, \"Le Donjon, espace créatif\", with the Donjon Love logo, the January–February and March–April calendars, and the promise \"Coming soon on the web!! Stay tuned!\""],
+  ]],
+  ['2010', [
+    ['May 30', "The moving truck in front of the red-roofed house at 81 route 263, Saint-Fortunat. The Donjon becomes \"grandeur nature\", life-size."],
+    ['June 12–15', "First photos of the bunker, the 300-foot former pig barn: the floor is buried under tons of broken concrete. The clearing begins, with a jackhammer and a wheelbarrow."],
+    ['June 27', "First little bridge over the stream, first trails, the barn in the flowering field."],
+    ['July 4–5', "A hammock over the pond, an electrical box on a tree, a truss structure in the field; at night, the first lines of light between the trees. The clip \"The island before the creation\" dates from those days."],
+    ['August 4', "The bunker's floor is bare; the rubble forms a long wall of stones in the field."],
+    ['August 14–15', "A dinner in the bunker, then the first stage at the edge of the pond, with tents under the spruces, a Buddha in the grass, string lights in the trees."],
+    ['September 11', "The first new lodges, with red and orange walls, stand in the bunker under the neon lights. The office settles into a corner."],
+    ['September 18', "Earthdance 2010 at the Donjon, \"81 route 263, St-Fortunat\": the global dance for peace. The prayer for peace is filmed that day."],
+    ['November 12', "The ledonjon.ca website goes online: \"At last here is a first draft after several months of inactivity and the establishment's move to the country… new and improved, it feels good!\""],
+    ['December 28', "Last update of the website: the Donjon counts \"to date more than 400 members\"."],
+    ['December 31', "New Year's Eve Party 2011 in the Donjon, \"at the top of the mountain\": 125 people in the warm, eleven DJs, a big bonfire, a bus from Montreal. \"All the lodges have been booked!!!\""],
+  ]],
+  ['2011', [
+    ['January 24', "The pig barn's thermometer reads minus twenty-five."],
+    ['February 5', "\"Labour! Into the woods!\", the winter worksite, \"in the woods, on the water's edge\". A snow tunnel lit in red, the lodges heated by the stove."],
+    ['February 13', "\"Welcome to our new site\": ledonjon.ca is rebuilt. \"The Donjon, which counts to date more than 400 members, is a private club… Now in the middle of nature, located on a 100-acre land in St-Fortunat, the Donjon offers outdoor and indoor camping spaces in the summer season as well as in winter.\" On the bill: Lune Noire from March 3 to 5, Sundari from June 3 to 5. The Contacts page introduces the two administrators: Christian, \"expert computer technician and Apple product repairman, expert in stage technique\", and Amandine, who \"has been promoting artists for more than 10 years\" and \"is also a decorator\"."],
+    ['March 3–5', "Lune Noire, three days around the new moon, at the Donjon grandeur nature."],
+    ['May 18', "The Sundari page publishes the complete programme of the \"100% ambient festival\": nine live acts, nineteen DJs, the decor, the sacred geometry, hula hoop and Break Dance Ballet workshops, nine booths, and \"two lakes and a river for swimming\". The energy campground is explained again, lodge by lodge."],
+    ['May 19–23', "The bunker's lodges and kitchen are finished; outside, a geodesic dome, logs, the stream in flood."],
+    ['June 3–5', "Sundari Festival 2011, \"a celebration of universal love\", with the Dreamtree Project of Adham Shaikh and Uwe Neumann. A shuttle leaves from the Sherbrooke metro station in Montreal, Friday at noon and at 8 pm, $30 round trip; the 8 pm departure is sold out. Speaker columns in the bunker's doorway, DJ booth in the trees, a \"Fire zone\" sign."],
+    ['June–July', "Log walkways, a round-log platform between the trees, a covered stage under the spruces, an office with two laptops and a view of the forest. The sign \"Camping: enchanting site, lake, river, trails, electricity, running water\" is planted in front of the house."],
+    ['August 19–21', "Tatanka, \"3-days outdoor gathering\", at the Donjon grandeur nature."],
+    ['August 24', "The Donjon becomes L'AgorA. Christian writes to the members: \"The worm that turns into a butterfly reaches the point of having to take off in order to continue!\" A cell of twenty people at $50 a month, two group levels, the bills posted, the road ploughed, and the owner of the land who finds \"the idea very good\"."],
+    ['September 23–25', "Earthdance St-Fortunat 2011, at \"L'Agora, Centre d'Art-Multi de St-Fortunat\". The photographer Renaud Kasma fixes the image of the Cherry Island cabin and its hammock."],
+    ['November 10', "The yurt in the dead leaves, the lodges turned into bedrooms, the wood stacked for winter."],
+    ['December 15', "By merging two Facebook identities, the page loses all its information. \"So now, in a crush, I'll be updating tonight.\" The albums \"What is l'AgorA (Archives 2011)\", 36 photos, and \"L'AgorA, from ground up\", 156 photos, go online in the days that follow."],
+    ['December 26 and 28', "Two Native American night ceremonies, led by a roadman, \"accompanied by songs and prayers all night, until sunrise\"."],
+  ]],
+  ['2012', [
+    ['March', "\"Bookings are starting for summer 2012!\" The Reggae Bash, August 3-4-5, is confirmed."],
+    ['April', "\"This is it! The Agora's campground is all ready to welcome you, with even the possibility of turnkey camping!\" L'AgorA calls itself \"both guinea pigs and scientists\" as it reads the rural laboratories measure of the ministry of Municipal Affairs."],
+    ['June 1', "The Agora's participatory festival."],
+    ['June 24–27', "\"The new mandala teepee, 25 feet up and 2 floors!\" and \"the new treehouse with wifi, electricity and a view\". The summer kitchen lights up in blue in front of the Cherry Island."],
+    ['July 6–8', "The Camper's Halloween: \"we dress up as wild beasts, as wicked fairies, as ghosts full of teeth… a place to disconnect from stress and live peaceful, almost fairy-tale moments\". In mid-July, the camping rates are published: $10 a night, $15 in the yurt or the treehouses."],
+    ['August 3–5', "Reggae Bash, seventh edition, at L'AgorA. \"This is Christian at l'Agora and some serious helpers are needed to get this wonderful weekend happening!\""],
+    ['August', "The plan: \"a stage, a forest… the dance floor cleared of trees among the trees, a natural amphitheatre, three treehouses around the dance floor connected by walkways, and this, permanently\". L'AgorA of St-Fortunat becomes an official Earthdance 2012 venue."],
+    ['September 21–23', "Fall Equinoxe – Earthdance St-Fortunat 2012, third edition at L'AgorA: DJs, live bands, reggae and jams, \"in our 55-foot circular bowl with a stage in the middle\". The prayer for peace, on September 22, in a circle in the night."],
+    ['September 28', "Last update of ledonjon.ca, under a new name: \"L'agora, de St-Fortunat (formerly le Donjon grandeur nature!), techno-bohemian campground\". \"Multidisciplinary artistic collective, multi-purpose space\", four-season camping, \"outdoor (fields, woods) and indoor (community hall called the bunker, barn, yurt, treehouse)\", and a page of photos of the Cherry Island. Coming up: Indian Summer Spirit Festival, October 5 to 8."],
+    ['October', "Indian Summer Spirit, two weeks after Earthdance. Then: \"The Agora seeks to define itself better with the authorities, for accreditation as a relevant initiative for the well-being of our disconnected society.\" Looking for roommates and for someone \"who knows about starting up a non-profit\"."],
+    ['November', "Northern lights at the Agora. The new ag0ra.org website is \"on its way\"."],
+    ['December 20–21', "Winter solstice celebration: \"New beginning! in peace and spontaneity!\""],
+  ]],
+  ['2013', [
+    ['January', "Crowdfunding campaign on Ulule: \"For each donation we offer you several kinds of stays in exchange!\" Goal: $1,000 in 30 days. The report of the 3 Monts intermunicipal fire authority serves as a to-do list: stove, chimney, detectors, extinguishers."],
+    ['February', "On ledonjon.ca, a \"Water Snake\" page: a poster, a link to the Facebook event, another to DJ Seamoon. The Chinese year of the Water Snake begins on February 10. The poster did not survive."],
+    ['February 21', "\"6 days left!!! Thank you for your support!\""],
+    ['March', "\"First batch we didn't burn through!! Long live the Agora's maple syrup!!\" Tatanka 2013 is confirmed for June 28. A \"good, communicative meeting about what's coming: this summer of 2013, we won't be idle!\""],
+    ['April', "\"The Agora evolves every day, from its roots as a party place, towards a sustainable, safe and progressive home for all… We are currently 6 committed individuals.\" Looking for roommates for the summer: \"we are already 4 people on site, but with the scale of the project and the knowledge required, and the costs, a few more people would be ideal\"."],
+    ['Early May', "The new tipi. Then the call: \"we need more people involved in the ecological societary project of l'AgorA because if the situation remains that people do not encourage more the existence of this place, as for October 2013 l'Agora will close its doors. PLEASE spread the infos so that we get a chance after 36 months and over 4000 hours of work!!!\""],
+    ['Late May', "The treehouses l'Ascension and la Riveraine are \"available for rent with a breathtaking view of the tipi, the stream and the Cherry Island\". \"Nice and dry in la Riveraine, under this torrential rain!!!!\" May 31: \"tomorrow, the roof!!\"; June 1: \"roof almost finished (we're short of boards), mezzanine installed, electricity in, tonight we sleep there!!!\""],
+    ['June', "\"Today, 3 years of work. 3 years of effort and creative surges to design a place fit for the elves of this world.\" Relations with the municipality grow tense: no more big festivals \"until our credibility is restored by the municipal council\". Public-relations blitz on June 23 at the village restaurant, pamphlets at every door, information session at the chip stand. June 19: \"Caution: elf crossing!\" A brochure presents the agritourism project: gourmet mushrooms, permaculture, lodging."],
+    ['June 4', "The address ledonjon.ca now leads straight to the Tatanka 2013 page: \"Tatanka is back in force in 2013 for its second edition! Productions Tekout, Six Feet High, Relaxation Lounge and Lune Noire present: three outdoor stages, more than 50 DJs of international calibre, street artists, circus artists, VJs, belly dancers, workshops, silly games, free camping…\" Twelve live acts, some sixty DJs, tickets from $25 to $70."],
+    ['June 28 – July 1', "Tatanka 2013, three days of outdoor electronic festival, with the stages newly reoriented."],
+    ['July 26', "Self-managed camp 2013 at L'AgorA, \"less than 100 km away and 3 days before\" the Open Mind festival."],
+    ['August', "\"Here we go for the mushrooms!\" Spore syringes and mycelium of red reishi, shiitake and turkey tail. The Agora's new plan, drawn by Antoine. \"The Agora being a place of geeks in herbs and technologies…\" The worksite of the \"next level dancefloor\": the future dance floor is purified with sage."],
+    ['September 2–11', "The new ag0ra.org website is online. \"Neverland stage almost done\", then, on the 10th: \"The Neverland done!!!\" The fan page passes 1,000 likes."],
+    ['September 20–22', "Earthdance St-Fortunat 2013, fourth edition, theme \"community\", on the Neverland: \"our new logwood stage with special decks for dancers\". L'AgorA is recognized by Earthdance Global as a peace-building organization. \"At the Agora we are only 4 and we work relentlessly.\""],
+    ['Late September', "\"The Agora pulled off a tour de force for Tatanka and Earthdance St-Fortunat: NO COMPLAINTS!!! it's really a record!\" A village councillor encourages the collective; \"next stop after the elections… rezoning backed by the municipality!\" A blog titles \"Coming Home to You\": \"The Agora that inspires people!\""],
+    ['October–November', "Looking for a pro \"for a lease-to-own of the house and farm: we have 6 months to find a way to buy\". The wood furnace fills the house with smoke. \"A small part of the bunker heated!\""],
+    ['December 21', "Back to Earth, the winter solstice at L'AgorA."],
+  ]],
+  ['2014', [
+    ['January', "Greetings from \"the whole team of l'AgorA\". L'AgorA looks for promoters \"for the coming summer season: an exhibition, a festival, a group camp or even a life-size weekend\". The Consulmac computer service is offered on site."],
+    ['March', "\"We're looking for funding and a motivated team!\" The 104-acre land, its buildings, its plantations and its 2,500 maples: \"Try to find better for 250 grand!!\" Roommates, \"indomitable Gauls\", wanted for six months. Pierre Rabhi's Manifesto for Oases Everywhere is shared."],
+    ['April', "\"More good news from the Agora… August and September are booked, so the rent and expenses are paid. There will be a festival in August and… the return of Earthdance on September 18, 2014, 5th edition, the very last one. We're only missing July.\" The house is offered for rent for the summer."],
+    ['May', "The Neverland at sunset, \"Cherry Island waterworld\", an office with Wi-Fi and electricity in the forest. Offer to live on the project for free until October 1, \"in exchange for keeping the place clean and respecting the neighbours\"."],
+    ['June 6–8', "Tatanka Festival 2014, third edition, three days outdoors: FreeWorm live, dancing \"on one of the ramps of the Neverland stage\". The verdict: \"Mission accomplished!! and above all… no complaints from the neighbours!!! It was the craziest and most energizing of the festivals ever to happen on the boards of the Agora.\""],
+    ['June 9', "\"Today, the Agora celebrates its 4 years of existence! What evolution, lessons and work during these crazy years!\" Open House of change, flea market and camping: \"this event will be the one that determines whether the Agora must and can continue its mission\". Otherwise, \"just rent it all-inclusive for $3,600, the 3 months left on the lease (October 2014)\"."],
+    ['June 13', "\"L'Agora is at its last season and we would like to share with you the experience!!\""],
+    ['June 23–24', "Saint-Jean party on the Cherry Island, \"the tribe of the St-Jean\", $10 per person per night \"to help us keep the place alive\"."],
+    ['July', "\"Come and spend a week, 2 weeks or 1 or 2 months at l'AgorA to finally find out what it is to live on a project and share daily life with others who want change!\" Treehouses for camping all summer."],
+    ['August', "Preparing Earthdance: tickets in presale, vendors in Trois-Rivières, Sherbrooke, Chicoutimi, Rimouski, Victoriaville, Ottawa, Toronto; \"a fine ride\" of bands from Quebec and DJs from Ontario; giant puppets wanted. The page passes 1,500 likes. At the end of August, a voltage problem on the Cherry Island's line: \"free tickets for small electrician services please!!\""],
+    ['September 19–21', "EarthDance Festival, 5th edition, \"Transformation\", the last festival at L'AgorA. \"The very last call of l'AgorA!! Then we send the magic back to the stars!!\" International Day of Peace on the 21st: \"we invite you to come and express, in your own way, what peace in the world means to you\"."],
+    ['September 26', "\"Everything must go and will be given away!\": \"today the great emptying of the Agora begins! Everything must be given away or thrown out! we have a great container to empty the whole bunker!\" Five years of furniture, tools, horticulture stock, decor, dishes."],
+    ['October', "End of the lease. Last photos of the land, on October 16, 2014."],
+  ]],
+  ['After', [
+    ['March 9, 2015', "\"If you're ever interested, the Agora's land with 104 acres, with the house and all the buildings, is still for sale for $240,000. We have a great file put together for the rezoning of the place.\""],
+    ['June 10, 2015', "\"L'Agora (the project) is now looking for a new place to establish itself, with a water stream.\" October 27: \"Still looking for a piece of land of 10 acres and up!!\""],
+    ['Between 2015 and 2018', "The page changes its cover photo to Renaud Kasma's, after his death: \"have a good celestial journey, and thank you again for this photo that set the tone and the vibe for the Agora\"."],
+    ['2016–2019', "The ledonjon.ca website answers with nothing but the host's default page; the Wayback Machine captures it one last time on May 2, 2019. In 2026, the domain name is free."],
+    ['2018', "Christian offers his services to the summer's festivals (Éclipse, Timeless…) and, on August 6, adds \"many photos of what this place looked like before, during and after… because there was a lack of photos of past experiences on this magical spot\"."],
+    ['March 10, 2019', "\"Hear ye, hear ye. If you see a 20-30 acres with lots of spruce for sale, let me know please! It's possible that the Agora project starts up again!\""],
+    ['November 26, 2019', "\"Before the Agora, there was Guindonville, which was another fight for affordable artists' housing.\" The film edited from the old DV tapes, found after sixteen years, is shared on the page."],
+    ['September 25, 2020', "The news from the land's buyer: all the trees \"that served us as labyrinths, camping, cabins, meditations of every kind, dancing, making love, rediscovering the inner child, contemplations\" were cut down, then judged unfit for lumber, sent back or burned. \"The guy cut down the whole beautiful paradise it was, only to be told the wood is scrap.\" The house has become a chicken coop."],
+    ['August 7, 2021', "\"In these uncertain times… I thought of offering a look back at a moment of creation and of naive, love-filled atmospheres. I dare hope to bring a smile of hope, a glimmer in your hearts with this flashback where everything came out of the imagination and was woven into the forest for events outside the system.\""],
+    ['2022', "\"The time the Neverland stage of L'Ag0rA started vibrating full size.\" In November, the Agora's profile on rave.ca, \"memories with photos\"."],
+    ['2023', "On June 27, the 2013 plan drawn by Antoine is reposted: \"the Agora's new plan!\" On October 10: \"well yes, the projects are starting again!!!\" A sauna, 8 × 8 × 8, \"also a place of meditation, contemplation, rest and disconnection\", by a river."],
+    ['2025', "Christian looks for festival work, \"a first in 20 years\", and wishes a happy new year \"to the rebels and to those who seek the truth at any cost. Let's return to our roots before we are uprooted for good!\""],
+    ['2026', "This archive site is assembled from what remains."],
+  ]],
+];
+---
+<Base title="Timeline" current="/en/timeline/" lang="en" alt="/chronologie/">
+  <p class="eyebrow">Timeline</p>
+  <h1>Season by season</h1>
+  <p class="lede">The dates come from the photos (their metadata), from the ledonjon.ca and ag0ra.org websites and their captures in the Wayback Machine, from the Facebook events and from the posts on L'AgorA's page, whose quotations are given as written, translated where the original was in French.</p>
+  <ul class="timeline">
+    {years.map(([year, items]) => (
+      <>
+        <li class="year"><h2>{year}</h2></li>
+        {items.map(([d, text, q]) => (
+          <li><time>{d}</time><p>{text}</p>{q && <p class="q">{q}</p>}</li>
+        ))}
+      </>
+    ))}
+  </ul>
+</Base>

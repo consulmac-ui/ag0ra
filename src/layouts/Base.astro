@@ -2,8 +2,19 @@
 import '../styles/global.css';
 import Garland from '../components/Garland.astro';
 import Skyline from '../components/Skyline.astro';
-const { title, description = "L'AgorA de Saint-Fortunat (2010–2014) : un sanctuaire en forêt bâti à la main par des créateurs hors norme. Cabanes dans les arbres, scènes en forêt, festivals, permaculture. L'archive.", current = '', image = '/img/227-cherry-island.jpg' } = Astro.props;
-const nav = [
+const {
+  title,
+  description,
+  current = '',
+  image = '/img/227-cherry-island.jpg',
+  lang = 'fr',
+  alt = '',
+} = Astro.props;
+const fr = lang === 'fr';
+const desc = description || (fr
+  ? "L'AgorA de Saint-Fortunat (2010–2014) : un sanctuaire en forêt bâti à la main par des créateurs hors norme. Cabanes dans les arbres, scènes en forêt, festivals, permaculture. L'archive."
+  : "L'AgorA of Saint-Fortunat, Quebec (2010–2014): a sanctuary in the forest, built by hand by creators who fit no mould. Treehouses, stages among the spruces, festivals, permaculture. The archive.");
+const nav = fr ? [
   ['/', 'Accueil'],
   ['/histoire/', 'Histoire'],
   ['/le-donjon/', 'Le Donjon'],
@@ -17,37 +28,57 @@ const nav = [
   ['/voix/', 'Voix'],
   ['/apres/', 'Après'],
   ['/archives/', 'Archives'],
+] : [
+  ['/en/', 'Home'],
+  ['/en/history/', 'History'],
+  ['/en/the-donjon/', 'The Donjon'],
+  ['/en/the-place/', 'The place'],
+  ['/en/yin-yang/', 'Yin and Yang'],
+  ['/en/mission/', 'Mission'],
+  ['/en/timeline/', 'Timeline'],
+  ['/en/events/', 'Events'],
+  ['/en/photos/', 'Photos'],
+  ['/en/videos/', 'Videos'],
+  ['/en/voices/', 'Voices'],
+  ['/en/after/', 'After'],
+  ['/en/archives/', 'Archives'],
 ];
-const fullTitle = title ? `${title} · L'AgorA` : "L'AgorA — Saint-Fortunat, 2010–2014";
+const fullTitle = title ? `${title} · L'AgorA` : (fr ? "L'AgorA — Saint-Fortunat, 2010–2014" : "L'AgorA — Saint-Fortunat, Quebec, 2010–2014");
+const altHref = alt || (fr ? '/en/' : '/');
+const site = 'https://ag0ra.org';
 ---
 <!doctype html>
-<html lang="fr">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={desc} />
     <meta property="og:title" content={fullTitle} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={desc} />
     <meta property="og:image" content={image} />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content={fr ? 'fr_CA' : 'en_CA'} />
+    <link rel="alternate" hreflang={fr ? 'en' : 'fr'} href={site + altHref} />
+    <link rel="alternate" hreflang={lang} href={site + (current || (fr ? '/' : '/en/'))} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <a class="skip" href="#contenu">Aller au contenu</a>
+    <a class="skip" href="#contenu">{fr ? 'Aller au contenu' : 'Skip to content'}</a>
     <header class="site">
       <div class="site-inner">
-        <a class="brand" href="/">
+        <a class="brand" href={fr ? '/' : '/en/'}>
           <img src="/img/026-tree-door.jpg" alt="" width="46" height="46" />
-          <span><strong>L'AgorA</strong><small>Saint-Fortunat · 2010–2014 · camping techno-bohème</small></span>
+          <span><strong>L'AgorA</strong><small>{fr ? 'Saint-Fortunat · 2010–2014 · camping techno-bohème' : 'Saint-Fortunat, Quebec · 2010–2014 · techno-bohemian campground'}</small></span>
         </a>
-        <nav class="main" aria-label="Principale">
+        <nav class="main" aria-label={fr ? 'Principale' : 'Main'}>
           {nav.map(([href, label]) => (
             <a href={href} aria-current={current === href ? 'page' : undefined}>{label}</a>
           ))}
+          <a class="lang" href={altHref} hreflang={fr ? 'en' : 'fr'} lang={fr ? 'en' : 'fr'} title={fr ? 'This page in English' : 'Cette page en français'}>{fr ? 'English' : 'Français'}</a>
         </nav>
       </div>
       <Garland />
@@ -58,10 +89,21 @@ const fullTitle = title ? `${title} · L'AgorA` : "L'AgorA — Saint-Fortunat, 2
     <footer class="site">
       <Skyline />
       <div class="site-inner">
-        <p class="footer-motto">Des pirates, des lutins, des elfes. De l'électro et du trad acoustique. De l'artisanat et de la terre. Le Cherry Island pour le yin, le Neverland pour le yang.</p>
-        <p>L'AgorA, 81 route 263, Saint-Fortunat (Chaudière-Appalaches, Québec), 2010–2014. Anciennement Le Donjon, grandeur nature. Site-archive assemblé en 2026 par Christian Brochu, cofondateur, à partir des archives du collectif : les sites ag0ra.org et ledonjon.ca, la page Facebook de L'AgorA, les brochures, les photos et les vidéos conservées.</p>
-        <p>Les textes d'époque sont reproduits tels quels, avec leur orthographe et leur enthousiasme. Les personnes citées le sont par leur prénom ou leur nom d'artiste, tels qu'ils apparaissaient publiquement à l'époque. Photos : membres et amis de L'AgorA, 2009–2014, sauf mention.</p>
-        <p>Voir aussi <a href="https://guindonville.pages.dev">Guindonville (Val-David, 2003)</a>, l'autre combat, et <a href="https://consulmac.com">consulmac.com</a>.</p>
+        {fr ? (
+          <>
+            <p class="footer-motto">Des pirates, des lutins, des elfes. De l'électro et du trad acoustique. De l'artisanat et de la terre. Le Cherry Island pour le yin, le Neverland pour le yang.</p>
+            <p>L'AgorA, 81 route 263, Saint-Fortunat (Chaudière-Appalaches, Québec), 2010–2014. Anciennement Le Donjon, grandeur nature. Site-archive assemblé en 2026 par Christian Brochu, cofondateur, à partir des archives du collectif : les sites ag0ra.org et ledonjon.ca, la page Facebook de L'AgorA, les brochures, les photos et les vidéos conservées.</p>
+            <p>Les textes d'époque sont reproduits tels quels, avec leur orthographe et leur enthousiasme. Les personnes citées le sont par leur prénom ou leur nom d'artiste, tels qu'ils apparaissaient publiquement à l'époque. Photos : membres et amis de L'AgorA, 2009–2014, sauf mention.</p>
+            <p>Voir aussi <a href="https://guindonville.pages.dev">Guindonville (Val-David, 2003)</a>, l'autre combat, et <a href="https://consulmac.com">consulmac.com</a>. <a href="/en/">This site in English</a>.</p>
+          </>
+        ) : (
+          <>
+            <p class="footer-motto">Pirates, pixies and elves. Electro and acoustic trad. Handcraft and earth. The Cherry Island for the yin, the Neverland for the yang.</p>
+            <p>L'AgorA, 81 route 263, Saint-Fortunat (Chaudière-Appalaches, Quebec), 2010–2014. Formerly Le Donjon, grandeur nature. Archive site assembled in 2026 by Christian Brochu, co-founder, from the collective's archives: the ag0ra.org and ledonjon.ca websites, L'AgorA's Facebook page, the brochures, the photos and the videos that survived.</p>
+            <p>Texts of the period are quoted as written; where the original was in French, the translation is ours. People are named by first name or artist name, as they appeared publicly at the time. Photos: members and friends of L'AgorA, 2009–2014, unless noted.</p>
+            <p>See also <a href="https://guindonville.pages.dev">Guindonville (Val-David, 2003)</a>, the other fight, and <a href="https://consulmac.com">consulmac.com</a>. <a href="/">Ce site en français</a>.</p>
+          </>
+        )}
       </div>
     </footer>
   </body>

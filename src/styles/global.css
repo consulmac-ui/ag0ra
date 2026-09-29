@@ -85,6 +85,8 @@ nav.main a {
 }
 nav.main a:hover { color: var(--sun); }
 nav.main a[aria-current="page"] { color: var(--sun); text-decoration: underline wavy var(--rope); text-underline-offset: 4px; }
+nav.main a.lang { margin-left: .4rem; color: var(--sea); border: 1px dashed var(--sea); border-radius: 999px; padding: .15rem .7rem; font-size: 1.05rem; }
+nav.main a.lang:hover { color: var(--sun); border-color: var(--sun); }
 
 main { max-width: var(--max); margin: 0 auto; padding: 1.5rem 1rem 3rem; position: relative; z-index: 1; }
 

@@ -1,0 +1,153 @@
+---
+import Base from '../../layouts/Base.astro';
+const events = [
+  ['Apr. 17, 2010', "Dark Side of Peace", "at \"the old Donjon\", Montreal, from 10 pm to 8 am."],
+  ['Sept. 18, 2010', "Earthdance 2010", "\"Give peace a dance\", 81 route 263, St-Fortunat. The first Earthdance of the Donjon grandeur nature."],
+  ['Dec. 31, 2010 – Jan. 2, 2011', "New Year's Eve Party 2011 ~ Red Electric Earth", "125 people in the Donjon at the top of the mountain, 11 DJs, a bonfire, a bus from Montreal."],
+  ['Feb. 5, 2011', "Labour! Into the woods!", "the winter worksite, \"in the woods, on the water's edge\"."],
+  ['Mar. 3–5, 2011', "Lune Noire", "three days of new moon at the Donjon grandeur nature, announced on the February 2011 home page."],
+  ['June 3–5, 2011', "Sundari Festival 2011 – Dreamtree Project", "\"A celebration of universal love\" with Adham Shaikh and Uwe Neumann, a \"100% ambient festival\": nine live acts, nineteen DJs, workshops, booths, a shuttle from Montreal. Tickets from $35 to $60, free for children under 12 and elders over 65. The complete programme is further down."],
+  ['Aug. 19–21, 2011', "Tatanka 2011", "\"3-days outdoor gathering\", Le Donjon grandeur nature."],
+  ['Sept. 23–25, 2011', "Earthdance St-Fortunat 2011", "at \"L'Agora, Centre d'Art-Multi de St-Fortunat\". First edition under the name L'AgorA."],
+  ['Dec. 26 and 28, 2011', "Native American ceremonies", "two night ceremonies led by a roadman, until sunrise."],
+  ['June 1, 2012', "The Agora's participatory festival", ""],
+  ['July 6–8, 2012', "The Camper's Halloween", "\"we dress up as wild beasts, as wicked fairies, as ghosts full of teeth\"."],
+  ['Aug. 3–5, 2012', "Reggae Bash, 7th edition", "three days of roots reggae at L'AgorA."],
+  ['Sept. 21–23, 2012', "Fall Equinoxe – Earthdance St-Fortunat 2012", "3rd edition at L'AgorA. DJs, live bands, reggae, jams. Prayer for peace on the 22nd."],
+  ['Oct. 2012', "Indian Summer Spirit", "two weeks after Earthdance, on the same stage."],
+  ['Nov. 2012', "Full Moon Gathering", "a full moon at L'AgorA."],
+  ['Dec. 20–21, 2012', "Winter Solstice Celebration", "\"New beginning! in peace and spontaneity!\""],
+  ['Feb. 2013', "Water Snake", "a poster on ledonjon.ca, a link to the Facebook event and to DJ Seamoon; the Chinese year of the Water Snake began on February 10. The poster was not preserved."],
+  ['June 28 – July 1, 2013', "Tatanka 2013, 2nd edition", "\"Arts, Music & Life Festival\", presented by Productions Tekout, Six Feet High, Relaxation Lounge and Lune Noire: \"three outdoor stages, more than 50 DJs of international calibre, street artists, circus artists, VJs, belly dancers, workshops, silly games, free camping\". 392 people interested on Facebook. The complete programme is further down."],
+  ['July 26, 2013', "Self-managed camp 2013", "\"A beautiful journey of consciousness and sharing\", three days before Open Mind."],
+  ['Sept. 20–22, 2013', "Earthdance St-Fortunat 2013", "4th edition, theme \"community\", on the Neverland. FreeWorm live returns. Tickets at Psychonaut in Montreal and Chanvre du Nord in Saint-Jérôme."],
+  ['Dec. 21, 2013', "Back to Earth", "the winter solstice."],
+  ['June 6–8, 2014', "Tatanka Festival 2014, 3rd edition", "\"3 days outdoor electronic festival\". FreeWorm live. \"The craziest and most energizing of the festivals ever to happen on the boards of the Agora.\""],
+  ['June 9, 2014', "Open House of change", "flea market and camping, for L'AgorA's fourth anniversary."],
+  ['June 23, 2014', "Saint-Jean party", "on the Cherry Island."],
+  ['Sept. 19–21, 2014', "EarthDance Festival, 5th edition – Transformation", "the last festival at L'AgorA. Snowphish & LockOut, Robert Fusil et les Chiens Fous, Sweet Grass, Ol' Savannah and others, on the Neverland."],
+  ['Sept. 26, 2014', "Everything must go and will be given away!", "the great emptying of the bunker."],
+];
+const affiches = [
+  ['177-39835-10150232949315114-669360113-137012.jpg', "Earthdance, September 15, 2007, Saint-Fortunat: \"give peace a dance\". Before the Donjon.", 'doc'],
+  ['173-37818-10150232949715114-669360113-137012.jpg', "Earthdance, September 13, 2008, Saint-Fortunat.", 'doc'],
+  ['181-40316-10150251442735114-669360113-142523.jpg', "Earthdance, September 18, 2010: \"give peace a dance, 81 route 263, St-Fortunat\".", 'doc'],
+  ['240-droppedimage-1.jpg', "Sundari Festival, June 3-4-5, 2011, \"presents Dreamtree Project, Adham Shaikh & Uwe Neumann, live!\"", 'doc'],
+  ['546-img-0180.jpg', "Sundari, English version: \"An ambient music festival\". Line-up and prices: $45 before March, $60 at the door.", 'doc'],
+  ['239-droppedimage.jpg', "Tatanka, August 19-20-21, 2011, with its bison head.", 'doc'],
+  ['117-earthdance2011stfo.jpg', "Earthdance St-Fortunat, September 23-25, 2011, on a photo of the stage.", 'doc'],
+  ['025-reggae-bash-poster-2.jpg', "Reggae Bash, 7th edition, August 3-4-5, 2012, at L'AgorA.", 'doc'],
+  ['612-tatanka2013.jpg', "Tatanka, June 28 to July 1, 2013, \"electronic music fair\".", 'doc'],
+  ['wb-tatanka-2013-banniere.jpg', "The Tatanka 2013 banner on ledonjon.ca: \"28-29-30 June 2013, Arts, Music & Life Festival, presented by Tekout, Lune Noire, 6 Feet High\". Recovered from the Wayback Machine.", 'doc'],
+  ['334-earthdance-fbpage.jpg', "Earthdance 2013, \"Fall Equinox, 20-22-09-2013, global peace party\", at the Agora.", 'doc'],
+  ['338-capture-decran-2013-08-20-a-21-50-49.jpg', "Bands and DJs of Earthdance 2013: Mille Rosado, Dugong, Dalaii Baba, BradyCardie, FreeWorm, Neo Tetsuo Tek, DJ Rikam, Spo_Onani, Snowphish, VNFX, Sabi Non Stop, Alex Dubmex, Pranapapa, Ultra-K, DJ Clectic, Pounjah Familia. $40, 81 route 263.", 'doc'],
+  ['015-agora-brochure.jpg', "The 2013 brochure, front: \"L'Agora, an enchanted forest… where time ceases to exist. A brand new agritourism business project.\"", 'doc'],
+  ['016-agora-brochure2.jpg', "The 2013 brochure, back: agritourism, mushrooms, permaculture, community.", 'doc'],
+];
+const photos = [
+  ['000-img-1005.jpg', "Earthdance 2010: the camp, a tent, a hammock over the water."],
+  ['001-img-1288.jpg', "Earthdance 2010: the crowd sitting under the spruces, on September 19."],
+  ['113-img-1691.jpg', "Sundari 2011: the booths and the crowd under the trees."],
+  ['114-img-1710.jpg', "Sundari 2011: the mixing desk, with the covered stage in the background."],
+  ['112-img-1609.jpg', "Sundari 2011: the forest stage lit up."],
+  ['440-img-0547.jpg', "Sundari 2011: building the stage decor, just before."],
+  ['444-img-0552.jpg', "Sundari 2011: under the stage, the speakers and the fabrics."],
+  ['445-img-0554.jpg', "\"Fire zone\": the Sundari 2011 camp, in the morning."],
+  ['458-img-0895.jpg', "July 2011: the purple stage and the crowd."],
+  ['459-img-0970.jpg', "Tatanka 2011: under the tarp, the lights."],
+  ['517-img-0882.jpg', "The crowd in front of the stage, in the blue light, 2011."],
+  ['146-260421-10150273745959744-629354743-89950.jpg', "The dance floor by day, a DJ in the background. Photo Renaud Kasma, 2011."],
+  ['145-260268-10150360403253438-829448437-10086.jpg', "Carrying the hay for the beds, 2011."],
+  ['140-222928-10150308813433438-829448437-96129.jpg', "The DJ booth under its lamps, 2011."],
+  ['wb-cabine-dj-2011-kasma.jpg', "Two DJs in the same round-log booth, under the caged lamps, 2011. Photo Renaud Kasma, reused on the Tatanka 2013 page of ledonjon.ca."],
+  ['121-dsc05270.jpg', "Earthdance 2011: the DJ-booth cabin, seen from above."],
+  ['122-dsc05272.jpg', "Earthdance 2011: under the red curtains of the booth."],
+  ['296-earthdance2012.jpg', "Earthdance 2012: the prayer for peace, in a circle, the night of September 22."],
+  ['574-297922-10150467142868438-829448437-11106.jpg', "2012: the Cherry Island cabin decorated for Earthdance, with its ladder.", 'tall'],
+  ['578-306977-10150467465733438-829448437-11109.jpg', "2012: the crowd under the blue canvas."],
+  ['583-319089-10150465489698438-829448437-11093.jpg', "2012: the outdoor lounge, between two sets."],
+  ['009-agora-earthdance-cherry.jpg', "Earthdance 2013: on the grass of the Cherry Island."],
+  ['010-earthdance-neverland.jpg', "Earthdance 2013: the Neverland in the middle of the night."],
+  ['011-earthdance-epic-s-painting.jpg', "Earthdance 2013: Epic's painting, the stage as seen by a painter."],
+  ['006-img-9922-2.jpg', "\"AGORA\" written in light, February 2013, in the bunker."],
+  ['014-884944-509242975781498-295473984-o.jpg', "The same light painting, wider."],
+  ['189-63532-1522107687559-1080595924-31425721-.jpg', "A festival night, string lights and floodlights."],
+  ['172-37797-10150246711385045-787915044-140474.jpg', "A canvas stretched over the stage, at night.", 'tall'],
+  ['161-302785-10150299695753904-665563903-76013.jpg', "The camp in the mud, on a rainy day."],
+  ['179-39862-10150246709230045-787915044-140473.jpg', "The sky above the site.", 'tall'],
+];
+---
+<Base title="The events" current="/en/events/" lang="en" alt="/evenements/">
+  <p class="eyebrow">The events</p>
+  <h1>Earthdance, Sundari, Tatanka and the others</h1>
+  <p class="lede">Five Earthdances, three Tatankas, a Sundari, a Reggae Bash, solstices, full moons, a self-managed camp, ceremonies. Everything the page and the websites announced, in order.</p>
+
+  <div class="prose">
+    <h2>Earthdance, the global dance for peace</h2>
+    <p>Earthdance is a synchronized festival, "in 60 countries and more than 200 places around the world", around the International Day of Peace, with a prayer for peace played at the same moment everywhere. Saint-Fortunat hosted one as early as 2007 and 2008; the Donjon, then L'AgorA, took it up every fall from 2010 to 2014, becoming an official Earthdance venue and, in 2013, a "peace-building organization" recognized by Earthdance Global. "For a last year presented at l'AgorA, we invite you to come and express, in your own way, according to your inspirations, what peace in the world means to you."</p>
+  </div>
+
+  <ul class="events">
+    {events.map(([d, title, text]) => (
+      <li><span>{d}</span><div><strong>{title}</strong>{text && <> — {text}</>}</div></li>
+    ))}
+  </ul>
+
+  <h2 class="eyebrow" style="margin-top:2.5rem">The posters</h2>
+  <div class="gallery">
+    {affiches.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <h2 class="eyebrow">Party nights</h2>
+  <div class="gallery">
+    {photos.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <div class="prose">
+    <h2>The site rules, 2013</h2>
+    <p>The text handed to the festival-goers of Tatanka and Earthdance 2013 began with a clarification: "When you visit the Agora, you are entering the home and workplace of several people who wish to share with you the vision of a creative world in harmony with nature." Then came the rules, in both languages:</p>
+    <ul>
+      <li>"Respect our agricultural spaces, they are sacred to us!!"</li>
+      <li>"When you go through the village of St-Fortunat, please don't shout!"</li>
+      <li>No parking on route 263: "you will get a $60 ticket from the police, ask the parking attendant for a spot".</li>
+      <li>"Use ONLY THE 8 DRY TOILETS and above all do not go to the other side of route 263, given the number of complaints we have received."</li>
+      <li>"The MAIN's music will be inside the BUNKER from midnight to 8 AM, a CHILL stage will be outside at night and several activities in the forest are planned."</li>
+      <li>Strictly no smoking in the barn; no glass bottles, "please bring cans"; sorting of waste.</li>
+      <li>"Come prepared with your food, your sleeping bag, warm clothes, a towel, a flashlight, a raincoat…"</li>
+      <li>"PLEASE keep your cigarette butts to dispose of them in the fire… because it can take weeks to pick up all the butts you see on the ground by the hundreds."</li>
+      <li>"Fires will only be allowed in designated areas. NO fires will be tolerated in the spruce plantations. The ground can catch fire at any moment."</li>
+    </ul>
+    <p>"Thank you for your participation, understanding and vigilance!!"</p>
+    <h2>The Earthdance 2011 line-up</h2>
+    <p>From Friday evening to Sunday afternoon, almost non-stop, with two "let's take a walk on the wild side" breaks: DJ Shalom, DJ YvY, DJane Fatima, DJ MadChris, DJ Psychotik, Celktik and Kinematik, DJ Audiophil, DJ Tegavs, DJ Naaz, DJ Risa, DJ Prana Papa, Eric Mandala live, DJ Om Shanti, DJane Lemon Balm, DJ Karmapa, DJ Jeff MKUltra, DJ Rikam, DJ Decode, Longstocking &amp; Boom Tara, DJ Magnetic Phil, DJ Spo_Onani, DJ Glitch, and to close, "A gore A". Styles announced: world psy, tek-trance, tribal house, dubstep, full on, psytrance, cumbia, world music, goa, progressive, minimal techno.</p>
+
+    <h2 id="sundari-2011">The Sundari 2011 programme</h2>
+    <p>The festival's page on ledonjon.ca, captured by the Wayback Machine on May 18, 2011, announced a "100% ambient festival": "The next 3-4-5th of June 2011… We will have the honor to receive on this Appalachian mountain Adham Shaikh and Uwe Neumann, with other accompanying musicians, in this unique adventure proper to enchantment. Attention, hold on the magic carpet!" And, throughout the festival, "a welcoming place for kids and grown-ups", activities in nature "for your little sailors", camping "with possible electrical hook-ups", two lakes and a river for swimming, a mountain and its trail, free spring water, food stands, healing stands, "enchanting, breathtaking scenery".</p>
+    <details>
+      <summary>The live acts, the DJs, the workshops, the booths and the tickets</summary>
+      <p><strong>Live</strong> — Dreamtree Project (Nelson, B.C. / Val-Morin), "the Indian dub fusion project of Juno nominee Adham Shaikh and Uwe Neumann"; Adham Shaikh (Nelson); Apadooraï (Montreal), "kind of an aboriginal rebel child… a symbiosis between a duo of didgeridoo freaks"; Lutin des Bois (Paris), founder of Secret Vibes; FreeWorm (Montreal), "the sound environmentalist" who produces "electro-organic"; Xnorophis (Montreal), "organic marginal music", with "a new tribal dub set for Sundari"; Tetsuo Tek (Similkameen Valley, B.C.), "a fairly dark dubstep set that will surprise you"; Rob-Vector (Boston), "a fan of Dreamtree Project, he's coming all the way to us"; Monokongo (Montreal), "a prog tribal set".</p>
+      <p><strong>DJs</strong> — Dub Style Selectah live vs Sabi Non Stop (Montreal), dub; Rikam vs Mat THC (Montreal), of Tech Safari and the Éclipse festival, "an ambient psychedelic vs downtempo set, a special for the occasion"; Seb vs Kiran (Montreal), Mandala sound &amp; vision, "an ethno ambient set à la Interchill"; Bendala (Montreal), "worldbeat peace &amp; love"; Psyberth (Montreal), psychill "with organic, tribal and melodic sounds"; Longstocking vs Aquarius (Montreal); Solar Prophecy (Sherbrooke); YvY (Sherbrooke), "a vibratory unification of love in a small point in the universe that is the Earth"; Lunar Groove (Montreal), chill-out; Psyrenity (Montreal), tribal psychill; Deception (Montreal), "a mix of goa and prog full of surprises"; SpoOnani (Quebec City), chill-out drum'n'bass; Prana Papa (Quebec City), "from chaïchill to psyworld"; Zen (Inverness), of Altar Records, "active since 1995 in the underground trance and psychedelic ambient scene"; Andreï K (Montreal); Semira (Quebec City), "groovy earth chill"; Alakazoo (Saint-Fortunat), Psy Bûcheron Prod, "a psy dub downtempo set at 70 bpm"; Sinaë (Montreal); Zven (Montreal), psychedelic ambient.</p>
+      <p><strong>The decor</strong> — Psychedelic Sanctuary Creations (Montreal), Cosmo (Peterborough), "Cosmic SpaceCrafts", and the Lune Noire (Saint-Fortunat).</p>
+      <p><strong>The workshops</strong> — sacred geometry, by Cosmo; hula hoop, "the principles and foundations of hooping", by Valérie Hanson; "Dreadlocks 101, myths and facts", by Alle Sundari; Break Dance Ballet, with Ketty and Alle, "two of the most extreme opposites of dance… Eat, breathe, sleep, dance".</p>
+      <p><strong>The booths</strong> — La Moustache Verte, wheatgrass juice; L'Arbre à Palabre, tea room; TrancePlants, shamanic and medicinal plants; Le Baril Roulant, craft beers; Resto chez Mmmm, soups, salads, sandwiches; Le Donjon, coffee and information; Zenergica, massages; a healing area; DJ Zen, CD sales.</p>
+      <p><strong>The tickets</strong> — $35 "for the first 15 tickets bought online via PayPal", $40 until February 28, $50 until June 3, $60 at the door; on sale at Psychonaut in Montreal, at the Arbre à Palabre in Sherbrooke, at Exo in Quebec City, at Chanvre du Nord in Saint-Jérôme and at Shanti Baba in Toronto. The lodges of the indoor campground, "includes electricity and running water", were reserved through PayPal. Signed: "For universal love… which will allow real change. The team of the Donjon, grandeur nature!"</p>
+    </details>
+    <p>A "Sundari Transport" page organized the shuttle: departure from the Sherbrooke metro station in Montreal, "meeting point corner of Square Saint-Louis and St-Denis", Friday June 3 at noon (arrival in Saint-Fortunat at 2:30 pm) or at 8 pm (arrival at 10:30 pm, "full"), return on Sunday; $30 round trip, "limited seats, reserve soon when purchasing your festival ticket".</p>
+
+    <h2 id="tatanka-2013">The Tatanka 2013 programme</h2>
+    <p>In June 2013, the address ledonjon.ca led straight to the festival's page, "painted" by Tekout, Lune Noire and Six Feet High: "Tatanka is back in force in 2013 for its second edition!" Three outdoor stages, "more than 50 DJs of international calibre", street and circus artists, VJs, belly dancers, workshops, silly games, free camping, a restaurant on site and a "Relaxation Lounge area" with massages, rugs, cushions and shishas. The styles announced: techno, psy/prog, electroswing/balkan, dubstep, techouse/electro, chill/psybient, slam poets, d&amp;b/jungle, dub/psydub, worldbeat, breakbeat, "scratchers on turntables". Tickets at $25 in March ("online only, sold out"), $35 in April, $45 in May, $55 in June, $70 at the door. The original page, with its photos, is preserved in the <a href="/archives/ledonjon-ca-wayback/">archives</a>.</p>
+    <details>
+      <summary>The live acts, the DJs, the visuals and the decor</summary>
+      <p><strong>Live</strong> — 1,618 (Operation Mindfuck Rec.), Montreal, prog tech; Biobazar, Trois-Rivières, world/trance; Delicate Frenesie, Montreal, dark psy; Florian MSK (D.M.T. Records), Montreal, minimal techno; Kola Papass, Montreal, prog/electroswing; Lynxpoint (Ghotiithout), Montreal, prog; Masingularity, Montreal, psy; MC Ultra K, Montreal, trip-hop; Monokongo, Montreal, prog; Über, Montreal, prog/tek; Wave Parasites (Hardtimes Prod), Montreal, techno; Xnorophis, Montreal, electroswing/tribal.</p>
+      <p><strong>DJs</strong> — Absolute, Montreal, psy; Ajaxbeats (Konkrete Jungle / NYC Ravers), Brooklyn, jungle; Aikido (Fractal), Montreal, chill/prog; Akibel (Evolove), Montreal, psy; Akshobhya (Logic Vision Records), Montreal, min/psy; Arachnaphabob, Quebec City, psy; Audiophil, Val-David, psy/tribal; Bendala (Space Gathering), Val-David, psy/ethno; Black Cat (Hardtimes), Montreal, jungle/tek; Clectic (Les Pirateries), Montreal, eclectic; D-Brain, Montreal, psy; Deception (Studio Sundari), Montreal, psy; Der Denker (D.M.T. Records / Concepto Hipnotico), Montreal, min; Dez1 (Upsessions), Quebec City, d&amp;b; Dezz aka Serenity vs Dubldrop, Montreal, dubstep; Ed-Liner (3e œil), Montreal, techno; Elios, Montreal, chill; Exode, Montreal, downtempo; Fat Louie (Orgone Nrg Lab), Quebec City, d&amp;b/trip-hop; Floydianchild, Quebec City, shamanik dub; Galaks (I.D.J./F.A.K), Montreal, techno; Glitch (Transition Productions), Quebec City, prog/psy; Jahlex (Reggae Bash), Montreal/Jamaica, reggae; Jeff MK-Ultra (Natura Festival), Montreal, psy; Hopeku (Joof Records / Planet B.E.N.), Quebec City, prog; Horizon (24/7 Records), Montreal, psy; Karmapa, Montreal, psy; Kerston (Sound In Motion), Quebec City, dubstep; Kilura (Pounjah Familia), Quebec City, chill; Kurse, Granby, drum and bass; Lectrick and Busker (Scratch Routine), Montreal; LunarGroove (Relaxation Lounge), Montreal, chill; Mattysea (Quite Nice), Montreal, jungle, dubstep; Max Dirt, Montreal, electro; Meta B (Monkey Dub), Montreal, d&amp;b/dub; Mohinia (Logic Vision Records), Montreal, psy; Mr. Lion (Tatanka / 6'High / Quite Nice), Montreal, stepper dub; Nismo (Cyber Loft), Montreal, house; Nitrous (Monkey Dub / In Da Jungle Recording), Montreal, d&amp;b; Obsidian (Logic Vision Records), Ottawa, psydub; Okin, Montreal, tekhouse; 0m Shant1, Montreal, dubstep; Pleckobwoy (Risk / Quite Nice / 6'High), Montreal, ethno trap, jungle; Pranapapa (Tatanka / Relaxation Lounge), Quebec City, shamanik trance; Risa Selector, Sherbrooke, dub; Sabi Non Stop (Tekout / Tatanka / 6'High), Montreal; Samiam, Montreal, downtempo; Semira, Montreal, world/electroswing; Seven Ways (Transition Productions), Quebec City, prog; Shanshancroft, Montreal, electro glitch; Sinaï, Montreal, chill; Sipherdee (64HRZ), Montreal, dubhouse/d&amp;b; Snowphish vs Lockout (MTL's Bassix Production), Montreal, deep dubstep; Spo_Onani (Upsessions / Tatanka), Quebec City, techno/d&amp;b; Stalker aka Forteress, Montreal, d&amp;b; Symbolium (United Beats Records), Montreal, psy; Synthetik (Prism Code), Ottawa/Montreal, psy; Transurfer (Logic Vision Records), Montreal, psy; VNFX (F.U.B.A.R. / Tekout), Montreal, prog/glitch; Wally (Highonbeats.com / Risk), Montreal, bass; YvY, Sherbrooke, ethno. "… And that's not all!"</p>
+      <p><strong>Visuals</strong> — VJ Virus, Lévis; VJ Shanshancroft, Montreal. <strong>Decor</strong> — Jo Landrix and Darsana Luna, Montreal. "The workshops, the slam poets, the street artists will be announced soon!"</p>
+    </details>
+
+    <h2>Ride-sharing</h2>
+    <p>A public group of 248 members, "Co-voiturage // Ride-share → AgorA", organized transport "at all times towards the Agora". For Earthdance 2013: "Does anyone have a bus/van/camper he would like to fill with riders and get his gas paid?" And for every festival, the same instruction as at the Donjon: "Let's try to carpool."</p>
+  </div>
+</Base>
