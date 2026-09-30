@@ -257,3 +257,16 @@ footer .footer-motto { font-family: var(--hand); font-weight: 700; font-size: 1.
 }
 
 .motto { font-family: var(--hand); font-weight: 700; font-size: 1.45rem; letter-spacing: .04em; line-height: 1.35; color: var(--parchment); max-width: var(--measure); margin: -.6rem 0 2rem; }
+
+/* Visionneuse de photos */
+.lb { position: fixed; inset: 0; z-index: 1000; background: rgba(8, 7, 6, .94); display: flex; align-items: center; justify-content: center; padding: 3rem 3.5rem; }
+.lb[hidden] { display: none; }
+.lb figure { margin: 0; max-width: 100%; max-height: 100%; display: flex; flex-direction: column; align-items: center; gap: .7rem; }
+.lb img { max-width: 100%; max-height: calc(100vh - 9rem); object-fit: contain; border-radius: 4px; box-shadow: 0 10px 40px rgba(0,0,0,.6); }
+.lb figcaption { font-family: var(--script); font-size: 1.15rem; color: var(--parchment); text-align: center; max-width: 60rem; }
+.lb button { position: absolute; background: none; border: 1px dashed var(--rope); color: var(--parchment); border-radius: 999px; width: 2.8rem; height: 2.8rem; font-size: 1.8rem; line-height: 1; cursor: pointer; }
+.lb button:hover, .lb button:focus-visible { color: var(--sun); border-color: var(--sun); outline: none; }
+.lb-x { top: 1rem; right: 1rem; }
+.lb-prev { left: .8rem; top: 50%; transform: translateY(-50%); }
+.lb-next { right: .8rem; top: 50%; transform: translateY(-50%); }
+@media (max-width: 640px) { .lb { padding: 3.5rem .5rem 1rem; } .lb-prev, .lb-next { top: auto; bottom: 1rem; transform: none; } .lb img { max-height: calc(100vh - 11rem); } }
