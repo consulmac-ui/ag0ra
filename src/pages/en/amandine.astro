@@ -1,0 +1,85 @@
+---
+import Base from '../../layouts/Base.astro';
+const donjon = [
+  ['donjon-5505-lounge.jpg', "Amandine's Donjon, at 5505 Saint-Urbain Street: red drapes, sofas, string lights. \"The intimate donjon.\""],
+  ['donjon-5505-scene.jpg', "The basement stage, between the hammocks and the lamps."],
+  ['donjon-5505-loge-rouge.jpg', "A red lodge, a candle, a bed: the Donjon of the beginnings."],
+  ['donjon-5505-salon.jpg', "The basement living room: Buddha, fabrics, lights."],
+  ['368-cal-janv-fev.jpg', "The Donjon's calendar, January–February 2010: parties, painting workshops, Lune Noire.", 'doc'],
+];
+const bunker = [
+  ['donjon-2010-salle-2.jpg', "Summer 2010: the former pig barn before the clearing, tons of blocks."],
+  ['donjon-2010-marteau-piqueur-1.jpg', "With the jackhammer, pig pen by pig pen."],
+  ['donjon-2010-salle-3.jpg', "The same floor, a few weeks later."],
+  ['311-img-0468.jpg', "August 4, 2010: the rubble taken out of the bunker, piled in the field. Amandine rests after her Herculean work."],
+  ['303-img-0338.jpg', "The pale blue walls of the pig pens, and the worksite beginning."],
+  ['324-img-0938.jpg', "The first lodges, almost ready for winter."],
+  ['ph-2010-12-16-90.jpg', "December 16, 2010: a lodge under blue light."],
+  ['108-img-0455.jpg', "May 19, 2011: the bunker's lodges, finished, in their colours.", 'tall'],
+];
+const sundari = [
+  ['439-img-0545.jpg', "June 4, 2011: the Sundari stage, under construction, in the sun."],
+  ['ph-2011-06-04-sundari-scene-foret.jpg', "Sundari 2011: the forest stage seen through the cherry blossoms."],
+  ['113-img-1691.jpg', "Sundari 2011: the booths and the crowd under the trees."],
+  ['ph-2011-06-04-sundari-kiosques-hamac.jpg', "Sundari 2011: the booths, the hammocks, and the crowd dancing."],
+  ['ph-2011-06-04-10.jpg', "Sundari 2011: the crowd in front of the forest stage."],
+  ['ph-2011-06-04-99.jpg', "Sundari 2011: the Buddha, its basket and its fabrics, under the dome."],
+  ['112-img-1609.jpg', "Sundari 2011: the Cherry Island lit up, at night."],
+  ['ph-2011-06-04-sundari-campeurs-cherry-nuit.jpg', "Sundari 2011: the campers around the Cherry Island, under the star and the string lights."],
+  ['donjon-sundari-dreamtree-1.jpg', "The Dreamtree Project (Adham Shaikh and Uwe Neumann), Amandine's guests, headliners of Sundari 2011. Photo from the event's page."],
+];
+---
+<Base title="Amandine" current="/en/amandine/" alt="/amandine/">
+  <p class="eyebrow">Tribute</p>
+  <h1>Amandine</h1>
+  <p class="lede">Amandine Durand Gasselin, known as Arte Mis. The Lune Noire, the Donjon, the land in Saint-Fortunat, the theme and colours of the bunker, the Sundari Festival: much of what this archive tells begins with her.</p>
+
+  <div class="note">This page gathers what the archives say about her work. Amandine is invited to correct and complete it, and the texts she wrote will be credited to her.</div>
+
+  <div class="prose">
+    <h2>The Lune Noire, since 2002</h2>
+    <p>The Lune Noire evenings are Amandine's creation. They began in 2002 in a loft in Old Montreal, "where every month artist and musician friends met to jam and dance", always around the new moons: visual arts first, creativity workshops, painting, crafts, then music and jam sessions. "Open to all, artists and creators!" The Lune Noire followed her to the Donjon, then to Saint-Fortunat, all the way to the decor of L'AgorA's festivals.</p>
+
+    <h2>The Donjon, her idea</h2>
+    <p>In 2008, the idea and the initiative are entirely hers. In her basement at 5505 Saint-Urbain Street, in Montreal, she puts up the red drapes, the hammocks, the sofas, the Buddha and the turntables of "the intimate donjon". Christian joins her a year later. The Donjon on Park Avenue, in the winter of 2009–2010, then the Donjon grandeur nature, in Saint-Fortunat, carry on what she started.</p>
+  </div>
+
+  <div class="gallery">
+    {donjon.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <div class="prose">
+    <h2>The land in Saint-Fortunat</h2>
+    <p>In the spring of 2010, Manu, the owner of the land, rents it to Amandine. The idea of setting up an artists' community there is hers. That is where the Donjon becomes "grandeur nature", and where the place later called L'AgorA takes root.</p>
+
+    <h2>The bunker: a year of work</h2>
+    <p>The former pig barn, which many called the bunker, was full of broken concrete. The great clean-up of the building owes a great deal to Amandine's work. And she is the one who gives the place its theme, on the land and above all in the bunker: the colours, the lodges, the atmosphere. It took a year of relentless work to get there.</p>
+    <p>The concept, presented on the Donjon's website, is that of "energy camping": of the eleven lodges in the indoor camping hall, "formerly meant to house pigs", seven are dedicated to the seven chakras, each in its own colour, from the red of the earth to the violet of illumination. "The choice and arrangement of each of the chosen elements form a universe conducive to an intimate encounter with each of your chakras."</p>
+    <p>On the site's Contacts page, in 2011, Amandine "has been promoting artists for more than 10 years; she creates events where visual and musical arts come together and harmonize for the pure pleasure of the senses; she is also a decorator".</p>
+  </div>
+
+  <div class="gallery">
+    {bunker.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <div class="prose">
+    <h2>The Sundari Festival, June 2011</h2>
+    <p>On June 3, 4 and 5, 2011, the Sundari Festival, "a celebration of universal love", is organized by Amandine, who chooses its guests. Headlining: the Dreamtree Project of Adham Shaikh and Uwe Neumann. A "100% ambient festival": nine live acts, nineteen DJs, workshops, booths, and a caravan between Montreal and Saint-Fortunat. "For universal love… which will allow real change."</p>
+  </div>
+
+  <div class="gallery">
+    {sundari.map(([file, caption, cls]) => (
+      <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+    ))}
+  </div>
+
+  <div class="prose">
+    <h2>Mid-August 2011</h2>
+    <p>Around mid-August 2011, Amandine leaves the land for her personal life. The Donjon remains her creation. The place carries on as L'AgorA, with the colours, the lodges and the spirit she gave it.</p>
+    <p>See also <a href="/en/the-donjon/">The Donjon</a> and the <a href="/en/history/">History</a>.</p>
+  </div>
+</Base>
