@@ -2,13 +2,13 @@
 import Base from '../layouts/Base.astro';
 const loft = [
   ['donjon-5505-lounge.jpg', "Le Donjon du 5505, à Montréal : tentures rouges, sofas, guirlandes. « L'intime donjon. »"],
-  ['donjon-5505-scene.jpg', "La scène du loft, entre les hamacs et les lampes."],
+  ['donjon-5505-scene.jpg', "La scène du sous-sol, entre les hamacs et les lampes."],
   ['donjon-5505-loge-rouge.jpg', "Une loge rouge, une bougie, un lit : le Donjon des origines."],
   ['donjon-5505-dj.jpg', "Aux platines, un des « DJ préférés » du Donjon."],
-  ['donjon-5505-salon.jpg', "Le salon du loft : ordinateur, bouddha, tissus."],
+  ['donjon-5505-salon.jpg', "Le salon du sous-sol : ordinateur, bouddha, tissus."],
   ['donjon-5505-bouddha.jpg', "Le bouddha et les lanternes, au fond de la grande pièce."],
   ['donjon-5505-peintre.jpg', "Un peintre au travail, un soir de Lune Noire."],
-  ['donjon-5505-atelier.jpg', "L'atelier du loft, avec ses toiles et ses lampes."],
+  ['donjon-5505-atelier.jpg', "L'atelier du sous-sol, avec ses toiles et ses lampes."],
   ['371-22274-250609899743-629354743-4268908-489.jpg', "Le coin lit du Donjon, sous la lampe mauve."],
   ['373-22274-250609914743-629354743-4268910-663.jpg', "Les sofas et les toiles psychédéliques du 5505."],
   ['375-22274-250612989743-629354743-4268920-136.jpg', "Un tapis de jeu, des lianes de tissu, des hamacs : la salle principale."],
@@ -37,6 +37,9 @@ const stfo = [
   <p class="lede">« De l'intime donjon du 5505… au donjon, grandeur nature ! » Le club privé d'artistes et de musiciens qui a précédé L'AgorA, de Montréal à Saint-Fortunat, 2009–2011.</p>
 
   <div class="prose">
+    <h2>Les débuts : le sous-sol d'Amandine</h2>
+    <p>Le Donjon est d'abord la création d'Amandine, alias Arte Mis. En 2008, c'est elle qui a l'idée et l'initiative de tout : dans son sous-sol du 5505, rue Saint-Urbain, à Montréal, elle installe les tentures rouges, les hamacs, les sofas, le bouddha et les platines de « l'intime donjon ». Christian la rejoint un an plus tard, en 2009. Quand les soirées deviennent trop bruyantes pour les voisins et les colocataires, ils louent ensemble un local sur l'avenue du Parc : le Donjon sur Parc, de janvier à mars 2010, trois mois intenses qui se terminent parce que l'endroit est devenu trop populaire. Retour au 5505 en avril, puis, fatigués d'être constamment sur le qui-vive, ils acceptent l'offre d'un endroit à Saint-Fortunat, où le Donjon devient « grandeur nature » pendant un an, avant de devenir L'AgorA après le départ d'Amandine.</p>
+
     <h2>Un club privé de 400 membres</h2>
     <p>Le site ledonjon.ca, mis en ligne en novembre 2010 « après plusieurs mois d'inactivité et un déménagement en région de l'établissement », présentait le Donjon ainsi : un club privé, comptant à ce jour plus de 400 membres, « où il faut demander aux administrateurs pour une nouvelle adhésion ». Pour devenir membre, il suffisait de se présenter à un événement, de payer le billet d'entrée et de demander son adhésion. « Il y a plusieurs types de membres, du type probatoire, régulier et privilégié. Il va de soi que c'est votre participation qui définira votre statut au sein de cet organisme où l'art est vivant. »</p>
     <blockquote><p>Espace privé en nature… où tout est mis à la disposition du sujet pour faire de lui-même le sujet de l'œuvre en devenir.</p><cite>Page d'accueil de ledonjon.ca, décembre 2010</cite></blockquote>
@@ -56,7 +59,7 @@ const stfo = [
     <p>Le Party du Jour de l'An 2011 alignait « nos DJ préférés » : Alakazoo, Bendala, Geetee, Jawstyle, NeuroVyrus, PranaPapa, SabiNonStop, View-zik, Xnorophis live, Zen, Zven.</p>
   </div>
 
-  <h2 class="eyebrow" style="margin-top:2rem">Le loft du 5505, Montréal, 2009–2010</h2>
+  <h2 class="eyebrow" style="margin-top:2rem">Le Donjon d'Amandine au 5505, Montréal, 2008–2010</h2>
   <div class="gallery">
     {loft.map(([file, caption, cls]) => (
       <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>

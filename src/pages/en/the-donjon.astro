@@ -2,13 +2,13 @@
 import Base from '../../layouts/Base.astro';
 const loft = [
   ['donjon-5505-lounge.jpg', "The Donjon of the 5505, in Montreal: red drapes, sofas, string lights. \"The intimate donjon.\""],
-  ['donjon-5505-scene.jpg', "The loft's stage, between the hammocks and the lamps."],
+  ['donjon-5505-scene.jpg', "The basement stage, between the hammocks and the lamps."],
   ['donjon-5505-loge-rouge.jpg', "A red lodge, a candle, a bed: the Donjon of the beginnings."],
   ['donjon-5505-dj.jpg', "At the decks, one of the Donjon's \"favourite DJs\"."],
-  ['donjon-5505-salon.jpg', "The loft's living room: computer, Buddha, fabrics."],
+  ['donjon-5505-salon.jpg', "The basement living room: computer, Buddha, fabrics."],
   ['donjon-5505-bouddha.jpg', "The Buddha and the lanterns, at the back of the big room."],
   ['donjon-5505-peintre.jpg', "A painter at work, on a Lune Noire night."],
-  ['donjon-5505-atelier.jpg', "The loft's studio, with its canvases and lamps."],
+  ['donjon-5505-atelier.jpg', "The basement studio, with its canvases and lamps."],
   ['371-22274-250609899743-629354743-4268908-489.jpg', "The Donjon's bed corner, under the purple lamp."],
   ['373-22274-250609914743-629354743-4268910-663.jpg', "The sofas and psychedelic canvases of the 5505."],
   ['375-22274-250612989743-629354743-4268920-136.jpg', "A play mat, fabric vines, hammocks: the main room."],
@@ -34,9 +34,12 @@ const stfo = [
 <Base title="Le Donjon, grandeur nature" current="/en/the-donjon/" lang="en" alt="/le-donjon/">
   <p class="eyebrow">Before L'AgorA</p>
   <h1>Le Donjon, grandeur nature!</h1>
-  <p class="lede">"From the intimate donjon of the 5505… to the donjon, life-size!" The private club of artists and musicians that preceded L'AgorA, from Montreal to Saint-Fortunat, 2009–2011.</p>
+  <p class="lede">"From the intimate donjon of the 5505… to the donjon, life-size!" The private club of artists and musicians that preceded L'AgorA, from Montreal to Saint-Fortunat, 2008–2011.</p>
 
   <div class="prose">
+    <h2>The beginnings: Amandine's basement</h2>
+    <p>The Donjon is first of all the creation of Amandine, alias Arte Mis. In 2008, the idea and the initiative are entirely hers: in her basement at 5505 Saint-Urbain Street, in Montreal, she puts up the red drapes, the hammocks, the sofas, the Buddha and the turntables of "the intimate donjon". Christian joins her a year later, in 2009. When the parties get too loud for the neighbours and the roommates, they rent a space together on Park Avenue: the Donjon on Parc, from January to March 2010, three intense months that end because the place has become too popular. Back to the 5505 in April, then, tired of being constantly on high alert, they accept the offer of a place in Saint-Fortunat, where the Donjon becomes "life-size" for a year, before becoming L'AgorA after Amandine's departure.</p>
+
     <h2>A private club of 400 members</h2>
     <p>The ledonjon.ca website, put online in November 2010 "after several months of inactivity and the establishment's move to the country", presented the Donjon this way: a private club, counting to date more than 400 members, "where one must ask the administrators for a new membership". To become a member, all you had to do was show up at an event, pay the admission and ask to join. "There are several types of members, probationary, regular and privileged. It goes without saying that your participation will define your status within this organization where art is alive."</p>
     <blockquote><p>A private space in nature… where everything is placed at the disposal of the subject, so that they may make of themselves the subject of the work in becoming.</p><cite>Home page of ledonjon.ca, December 2010</cite></blockquote>
@@ -56,7 +59,7 @@ const stfo = [
     <p>The New Year's Eve Party 2011 lined up "our favourite DJs": Alakazoo, Bendala, Geetee, Jawstyle, NeuroVyrus, PranaPapa, SabiNonStop, View-zik, Xnorophis live, Zen, Zven.</p>
   </div>
 
-  <h2 class="eyebrow" style="margin-top:2rem">The loft at the 5505, Montreal, 2009–2010</h2>
+  <h2 class="eyebrow" style="margin-top:2rem">Amandine's Donjon at the 5505, Montreal, 2008–2010</h2>
   <div class="gallery">
     {loft.map(([file, caption, cls]) => (
       <figure class={cls}><img src={`/img/${file}`} alt={caption} loading="lazy" /><figcaption>{caption}</figcaption></figure>
